@@ -1,0 +1,287 @@
+/**=====================================================**
+                    GLOBAL-MIXINS
+=======================================================**/
+
+// SET BACKGROUND
+@mixin setBgColor($background, $color) {
+    background: $background;
+    color: $color;
+}
+
+// FLEXBOX MIXINS
+
+// DISPLAY FLEX
+@mixin flex {
+    display: flex;
+}
+
+// FLEX ROW
+@mixin flex-row {
+    @include flex;
+    flex-direction: row;
+}
+
+// FLEX COLUMN
+@mixin flex-column {
+    @include flex;
+    flex-direction: column;
+}
+
+// FLEX CENTER VERTICLE
+@mixin flex-center-vert {
+    @include flex;
+    align-items: center;
+}
+
+// FLEX BASELINE
+@mixin flex-baseline {
+    @include flex;
+    align-items: baseline;
+}
+
+// FLEX ALIGNEND
+@mixin flex-align-end {
+    @include flex;
+    align-items: flex-end;
+}
+
+// FLEX ALIGNEND
+@mixin flex-align-end-justifycenter {
+    @include flex-align-end;
+    justify-content: center;
+}
+
+// FLEX CENTER BASELINE
+@mixin flex-center-baseline {
+    @include flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+// FLEX CENTER ROW
+@mixin flex-center {
+    @include flex-center-vert;
+    justify-content: center;
+}
+
+// FLEX BETWEEN
+@mixin flex-between {
+    @include flex;
+    justify-content: space-between;
+}
+
+// FLEX CENTER
+@mixin flex-between {
+    @include flex-center-vert;
+    justify-content: space-between;
+}
+
+// FLEX CENTER COLUMN
+@mixin flex-center-column {
+    @include flex-center;
+    flex-direction: column;
+}
+
+// FLEX CENTER VERTICLE
+@mixin flex-baseline {
+    display: flex;
+    align-items: baseline;
+}
+
+// FLEX CENTER HORIZONTAL
+@mixin flex-center-horiz {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@mixin flex-center-between {
+    @include flex-between;
+    align-items: center;
+}
+
+@mixin flex-center-around {
+    @include flex-center-vert;
+    justify-content: space-around;
+}
+
+// RESET LIST
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin list-vertical {
+    @include reset-list;
+    @include flex-column;
+}
+
+@mixin list-horizontal {
+    @include reset-list;
+    @include flex-center-vert;
+}
+
+@mixin border($style, $width, $color) {
+    border: $style (($width / $base) + rem) $color;
+}
+
+@mixin border-single($direction, $style, $width, $color) {
+    border-#{$direction}: $style (($width / $base) + rem) $color;
+}
+
+// DEFINE BORDER-RADIUS-ALL MIXIN
+@mixin radius($radius) {
+    border-radius: length($radius);
+    -webkit-border-radius: length($radius);
+    -moz-border-radius: length($radius);
+    -ms-border-radius: length($radius);
+    -o-border-radius: length($radius);
+    border-radius: length($radius);
+}
+
+@mixin percentradius($percentage) {
+    -webkit-border-radius: $percentage;
+    -moz-border-radius: $percentage;
+    -ms-border-radius: $percentage;
+    -o-border-radius: $percentage;
+    border-radius: $percentage;
+}
+
+@mixin circle {
+    @include percentradius(100%);
+}
+
+// DEFINE INDIVIDUAL BORDER-RADIUS MIXIN
+@mixin single-radius($dir1, $dir2, $radius) {
+    -webkit-border-#{$dir1}-#{$dir2}-radius: length($radius);
+    -moz-border-#{$dir1}-#{$dir2}-radius: length($radius);
+    -ms-border-#{$dir1}-#{$dir2}-radius: length($radius);
+    -o-border-#{$dir1}-#{$dir2}-radius: length($radius);
+    border-#{$dir1}-#{$dir2}-radius: length($radius);
+}
+
+// DEFINE CROSS BORDER-RADIUS
+@mixin double-radius($dir1, $dir2, $r1, $dir3, $dir4, $r2) {
+    border-#{$dir1}-#{$dir2}-radius: length($r1);
+    border-#{$dir3}-#{$dir4}-radius: length($r2);
+}
+
+@mixin hover {
+    &:not([disabled]):hover {
+        @content;
+    }
+}
+
+@mixin line-clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+}
+
+@mixin line-clamp-4 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+}
+
+@mixin line-clamp-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+}
+
+@mixin text-overflow {
+    max-width: 99%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -moz-transform: $property;
+    -ms-transform: $property;
+    -o-transform: $property;
+    transform: $property;
+}
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+// SQUARE SIZE
+@mixin square($width, $height: $width) {
+    height: $width;
+    width: $height;
+}
+
+@mixin w100 {
+    width: 100%;
+}
+
+@mixin h100 {
+    height: 100%;
+}
+
+@mixin wh100 {
+    width: 100%;
+    height: 100%;
+}
+
+@mixin vertical-align {
+    position: absolute;
+    top: 50%;
+    @include transform(translateY(-50%));
+}
+
+@mixin position-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+}
+
+@mixin ratio($width, $r1, $r2) {
+    width: size($width);
+    aspect-ratio: $r1 / $r2;
+}
+
+@mixin transparent-button {
+    background: transparent;
+    border: none;
+}
+
+@mixin transitionsall {
+    @include transition(all $time ease-in-out);
+}
+
+@mixin transitionscolor {
+    @include transition(color $time ease-in-out);
+}
+
+@mixin transitionsbackground {
+    @include transition(background $time ease-in-out);
+}
+
+@mixin transitionsopacity {
+    @include transition(background $time ease-in-out);
+}
+
+@mixin transitiontransform {
+    @include transition(transform $time ease-in-out);
+}

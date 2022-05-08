@@ -1,0 +1,164 @@
+
+/**=====================================================**
+                ANIMATION-STYLES
+=======================================================**/
+
+%animation {
+	-webkit-animation-duration: $time;
+	animation-duration: $time;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+@keyframes slideDownIn {
+	0% {
+		transform: translateY(-100%);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+
+	0% {
+		transform: translateY(-100%);
+	}
+}
+
+%slideDownIn {
+	-webkit-animation-name: slideDownIn;
+	animation-name: slideDownIn;
+}
+
+@keyframes slideDownInMobile {
+	0% {
+		transform: translateY(length(-20));
+	}
+
+	100% {
+		transform: translateY(length(10));
+	}
+
+	0% {
+		transform: translateY(length(-20));
+	}
+}
+
+%slideDownInMobile {
+	-webkit-animation-name: slideDownInMobile;
+	animation-name: slideDownInMobile;
+}
+
+@keyframes slideUpIn {
+	0% {
+		transform: translateY(length(-20));
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+
+	0% {
+		transform: translateY(length(20));
+	}
+}
+
+%slideUpIn {
+	-webkit-animation-name: slideUpIn;
+	animation-name: slideUpIn;
+}
+
+@keyframes slideUpInMobile {
+	0% {
+		transform: translateY(length(40));
+	}
+
+	100% {
+		transform: translateY(length(25));
+	}
+
+	0% {
+		transform: translateY(length(40));
+	}
+}
+
+%slideUpInMobile {
+	-webkit-animation-name: slideUpInMobile;
+	animation-name: slideUpInMobile;
+}
+
+@keyframes slideLeftIn {
+	0% {
+		transform: translateX(length(100));
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+
+	0% {
+		transform: translateX(length(-100));
+	}
+}
+
+%slideLeftIn {
+	-webkit-animation-name: slideLeftIn;
+	animation-name: slideLeftIn;
+}
+
+@keyframes slideRightIn {
+	0% {
+		transform: translateX(length(100));
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+
+	0% {
+		transform: translateX(length(100));
+	}
+}
+
+%slideRightIn {
+	-webkit-animation-name: slideRightIn;
+	animation-name: slideRightIn;
+}
+
+%floating {
+	animation-name: floating;
+	-webkit-animation-name: floating;
+
+	animation-duration: 2s;
+	-webkit-animation-duration: 2s;
+
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@keyframes floating {
+	0% {
+		transform: translateY(0%)
+	}
+
+	50% {
+		transform: translateY(1%)
+	}
+
+	100% {
+		transform: translateY(0%);
+	}
+}
+
+@-webkit-keyframes floating {
+	0% {
+		-webkit-transform: translateY(0%);
+	}
+
+	50% {
+		-webkit-transform: translateY(1%);
+	}
+
+	100% {
+		-webkit-transform: translateY(0%);
+	}
+}

@@ -1,0 +1,7 @@
+$base: 16;
+
+// CONVERT PX TO REM
+@function length($length) {
+    @return (($length / $base) + rem);
+}
+

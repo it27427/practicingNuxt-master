@@ -1,0 +1,81 @@
+/**==================================================
+                GOOGLE FONT CDN (INTER)
+==================================================**/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+/**==================================================
+                FONTS INFO START
+==================================================**/
+$primaryFont: 'Nunito';
+$secondaryFont: 'Oswald';
+$font-styles: ('normal': normal, 'italic': italic, 'oblique': oblique);
+$font-weights: ('thin':100, 'extralight': 200, 'light': 300, 'normal': normal, 'medium': 500, 'semibold': 600, 'bold': 700, 'black': 900);
+
+// SET FONT-FAMILY
+@function family($font-family) {
+	@return inspect($value: $font-family);
+}
+
+// SET FONT-STYLE
+@function style($style) {
+	@return map-get($font-styles, $style);
+}
+
+// SET FONT-STYLE
+@function size($size) {
+	@return (($size / $base) + rem);
+}
+
+// SET FONT-WEIGHT
+@function weight($weight) {
+	@return map-get($font-weights, $weight);
+}
+
+// SET LINE-HEIGHT
+@function line-height($line-height, $size) {
+	@return ($line-height / $size);
+}
+
+/**===============================================
+                FONT STYLE MIXINS
+===============================================**/
+
+// FONT WITHOUT PATH
+@mixin font-face($fontname, $fontstyle, $fontsize, $fontweight, $line-height) {
+	font: {
+		family: quote($fontname);
+		style: $fontstyle;
+		size: $fontsize;
+		weight: $fontweight;
+	}
+
+	line-height: $line-height;
+}
+
+a, span, p, input {
+	@include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+}
+
+h1 {
+	@include font-face($secondaryFont, style('normal'), size(48), weight('normal'), line-height(67.2, 48));
+}
+
+h2 {
+	@include font-face($secondaryFont, style('normal'), size(42), weight('semibold'), line-height(58.8, 42));
+}
+
+h3 {
+	@include font-face($secondaryFont, style('normal'), size(36), weight('semibold'), line-height(50.4, 36));
+}
+
+h4 {
+	@include font-face($secondaryFont, style('normal'), size(30), weight('semibold'), line-height(42, 30));
+}
+
+h5 {
+	@include font-face($secondaryFont, style('normal'), size(24), weight('semibold'), line-height(33.6, 24));
+}
+
+h6 {
+	@include font-face($secondaryFont, style('normal'), size(18), weight('semibold'), line-height(25.2, 18));
+}

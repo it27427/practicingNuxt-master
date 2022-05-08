@@ -1,0 +1,108 @@
+.card-doctor {
+    background: $white;
+    cursor: pointer;
+    @include radius(15);
+    padding: length(28) length(26) length(30);
+    overflow: hidden;
+    @include flex-center-column;
+
+    @include breakpoint(desktop1200) {
+        padding: length(20) length(18) length(24);
+    }
+
+    &-header {
+        // max-width: length(260);
+        // max-height: length(260);
+
+        .card-thumbnail {
+            max-width: length(260);
+            max-height: length(260);
+            @include double-radius(top, left, 15, top, right, 15);
+            overflow: hidden;
+
+            img {
+                @include wh100;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &-body {
+        padding: length(20) length(36) length(18);
+        @include flex-center-column;
+        gap: length(16);
+
+        @include breakpoint(desktop1400) {
+            padding: length(20) length(24) length(18);
+        }
+
+        @include breakpoint(desktop1200) {
+            padding: length(18) length(16) length(14);
+        }
+
+        .doctorname {
+            @include flex-center;
+            gap: length(12);
+
+            .name {
+                color: $gray-700;
+            }
+
+            .status {
+                @include square(length(8));
+                @include circle;
+                background: $gray-300;
+                margin-top: length(4);
+
+                &.active {
+                    background: $activeBg;
+                }
+            }
+        }
+
+        .doctorpost {
+            .position {
+                color: $gray-700;
+            }
+        }
+
+        .ragings {
+            @include flex-center-vert;
+            gap: length(8);
+
+            .ratingtext {
+                // color: $yellow;
+            }
+
+            .ratinglist {
+                @include list-horizontal;
+                margin-top: length(-6);
+
+                &-item {
+                    @include square(length(20));
+                    overflow: hidden;
+
+                    svg {
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+
+        .profilelink {
+            .link {
+                // color: $tertiary;
+                text-align: center;
+                @include transitionscolor;
+
+                @include hover {
+                    // color: darken($tertiary, 15%);
+                }
+            }
+        }
+
+        .appointmentinfo {
+            @include w100;
+        }
+    }
+}

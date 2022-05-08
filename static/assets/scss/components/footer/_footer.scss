@@ -1,0 +1,120 @@
+/**=======================================================**
+                        FOOTER SECTION START
+**=======================================================**/
+.footer {
+  background: $black;
+  padding: length(48) length(0) length(20);
+
+  &-content {
+    @include flex-column;
+    
+    .divider {
+      margin: length(32) length(0);
+      @include w100;
+      height: length(1);
+      background: $gray-500;
+    }
+
+    .footerinfo {
+      @include flex-center-column;
+      gap: length(24);
+
+      @include breakpoint(tab992) {
+          align-items: flex-start;
+      }
+
+      &-header {
+        .footerinfo-title {
+          color: $white;
+          @include font-face($primaryFont, style('normal'), size(18), weight('semibold'), line-height(24, 18));
+          font-feature-settings: 'salt';
+
+          @include breakpoint(tab992) {
+            @include font-face($primaryFont, style('normal'), size(22), weight('semibold'), line-height(28, 22));
+          }
+        }
+      }
+
+      &-body {
+          @include flex-center-column;
+          gap: length(40);
+
+          @include breakpoint(tab992) {
+            align-items: flex-start;
+          }
+
+          .footerlist {
+              @include list-vertical;
+              align-items: center;
+              gap: length(12);
+
+              @include breakpoint(tab992) {
+                align-items: flex-start;
+              }
+
+              &-link {
+                  color: $white;
+                  position: relative;
+                  @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(21, 14));
+                  font-feature-settings: 'salt';
+              
+                  @include breakpoint(tab992) {
+                    @include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(25.92, 16));
+                  }
+
+                  &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: length(1);
+                    left: 0;
+                    height: length(1);
+                    width: 0;
+                    background: $primary;
+                    transition: .5s;
+                  }
+
+                  @include hover {
+                    color: $primary;
+
+                    &::before {
+                      @include w100;
+                    }
+                  }
+              }
+          }
+
+          .social-list {
+              @include list-horizontal;
+              gap: length(32);
+
+              &-link {
+                @include square(length(30));
+                @include flex-center;
+                overflow: hidden;
+            
+                @include breakpoint(tab992) {
+                  @include square(length(36));
+                }
+
+                svg {
+                  @include wh100;
+                }
+              }
+          }
+      }
+  }
+
+    .copyright {
+      text-align: center;
+
+      &-text {
+        color: $white;
+        @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
+      }
+    }
+  }
+}
+
+/**=======================================================**
+                        FOOTER SECTION END
+**=======================================================**/

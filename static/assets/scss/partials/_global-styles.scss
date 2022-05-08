@@ -1,0 +1,210 @@
+/**=====================================================**
+                    GLOBAL-RESETTINGS
+=======================================================**/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+button,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+input,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+main,
+nav,
+object,
+ol,
+output,
+option,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+select,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    &::selection {
+        @include setBgColor($primary, $white);
+    }
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+main,
+nav,
+section {
+    display: block;
+    margin: 0;
+}
+
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+
+/**=====================================================**
+                    DEFAULT-SETTINGS
+=======================================================**/
+
+body {
+    background: $bodyBg;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    @include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+figure {
+    margin-bottom: 0;
+}
+
+// HIDE INPUT ARROWS
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+input:focus,
+select:focus {
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+    color: transparent;
+}
+
+input[type="date"]::before {
+    content: attr(data-placeholder);
+    @include w100;
+}
+
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+    display: none
+}
+
+select {
+    cursor: pointer;
+}

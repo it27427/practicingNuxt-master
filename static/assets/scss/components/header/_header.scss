@@ -1,0 +1,97 @@
+/**=======================================================**
+                        HEADER SECTION START
+**=======================================================**/
+
+.header {
+  background: $black;
+
+  &-nav {
+    @include flex-center-between;
+    padding: length(8) length(0);
+
+    .sitelogo {
+      .logo {
+        width: length(136);
+        height: length(44);
+
+        img {
+          @include wh100;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .desktopsearch {
+      @include flex-center-vert;
+      width: length(460);
+      margin-inline: auto;
+
+      .searchfield {
+        @include setBgColor(transparent, $white);
+        padding: length(11) length(16);
+        height: length(44);
+        width: calc(100% - 2.75rem);
+
+        &::placeholder {
+          color: $gray-500;
+        }
+      }
+
+      .btn-search {
+        background: transparent;
+        @include square(length(44));
+        @include flex-center;
+        padding: length(12);
+
+        svg {
+          @include wh100;
+
+          path {
+            fill: $gray-300;
+            @include transitionsall;
+          }
+        }
+
+        @include hover {
+          svg {
+            path {
+              fill: $primary;
+            }
+          }
+        }
+      }
+    }
+
+    .desktoplist {
+      @include flex-end;
+
+      &-item {
+        list-style: none;
+
+        &:last-child {
+          .desktoplist-link {
+            padding-right: 0;
+          }
+        }
+      }
+
+      &-link {
+        color: $white;
+        display: inline-block;
+        font-weight: 500;
+        padding: length(10.812) length(16);
+        letter-spacing: length(0.32);
+        text-align: center;
+        @include transitionscolor;
+
+        @include hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+/**=======================================================**
+                        HEADER SECTION END
+**=======================================================**/
