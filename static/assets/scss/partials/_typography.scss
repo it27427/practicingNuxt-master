@@ -53,7 +53,15 @@ $font-weights: ('thin':100, 'extralight': 200, 'light': 300, 'normal': normal, '
 }
 
 a, span, p, input {
-	@include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+	@include font-face($primaryFont, style('normal'), size(12), weight('normal'), line-height(16.8, 12));
+	
+	@include breakpoint(mobile500) {
+		@include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
+	}
+
+	@include breakpoint(mobile768) {
+		@include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+	}
 }
 
 h1 {

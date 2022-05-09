@@ -14,11 +14,14 @@
     "test": "jest"
   },
   "dependencies": {
+    "@adamdehaven/vue-custom-tooltip": "^1.4.4",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/pwa": "^3.3.5",
     "bootstrap": "^4.6.1",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.19.3",
+    "gsap": "^3.10.4",
+    "moment": "^2.29.3",
     "nuxt": "^2.15.8",
     "swiper": "^8.1.4",
     "vue": "^2.6.14",

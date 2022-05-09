@@ -1,0 +1,37 @@
+.swiper-button-prev,
+.swiper-button-next {
+  background: transparent;
+  width: length(36) !important;
+  height: length(36) !important;
+  @include circle;
+  margin: 0;
+  padding: 0;
+
+  &::after {
+    display: none;
+  }
+
+  svg {
+    @include wh100;
+
+    path {
+      fill: $gray-500;
+    }
+  }
+
+  @include hover {
+    svg {
+      path {
+        fill: $primary;
+      }
+    }
+  }
+}
+
+.swiper-button-prev {
+  left: 0 !important;
+}
+
+.swiper-button-next {
+  right: 0 !important;
+}

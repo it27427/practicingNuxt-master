@@ -1,0 +1,60 @@
+/**=======================================================**
+                    HOME-SLIDER SECTION START
+**=======================================================**/
+
+.home-slider {
+  padding: length(32) length(20) length(40);
+  
+  @include breakpoint(mobile768) {
+    padding: length(48) length(20) length(64);
+  }
+  
+  @include breakpoint(tab992) {
+    padding: length(64) length(20) length(80);
+  }
+
+  &-content {
+    @include flex-column;
+    gap: length(40);
+  }
+
+  &-header {
+    @include flex-column;
+    gap: length(8);
+
+    @include breakpoint(mobile576) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .sliderinfo {
+      .slider-title {
+        color: $headerBg;
+        @include font-face($secondaryFont, style('normal'), size(30), weight('semibold'), line-height(42, 30));
+  
+        @include breakpoint(mobile576) {
+          @include font-face($secondaryFont, style('normal'), size(36), weight('semibold'), line-height(50.4, 36));
+        }
+  
+        @include breakpoint(mobile768) {
+          @include font-face($secondaryFont, style('normal'), size(42), weight('semibold'), line-height(58.8, 42));
+        }
+  
+        @include breakpoint(tab992) {
+          @include font-face($secondaryFont, style('normal'), size(48), weight('normal'), line-height(67.2, 48));
+        }
+      }
+    }
+
+    .clockinfo {
+      .date {
+        color: $gray-600;
+      }
+    }
+  }
+}
+
+/**=======================================================**
+                    HOME-SLIDER SECTION END
+**=======================================================**/

@@ -3,13 +3,43 @@
 **=======================================================**/
 
 .header {
-  background: $black;
+  background: $headerBg;
+  box-shadow: $head-shadow;
+  position: sticky;
+  @include w100;
+  top: 0;
+  left: 0;
+  height: length(64);
+  transition: ease $time;
+  z-index: 9999;
+  padding: length(0) length(20);
+
+  .hamburger {
+    @include flex-center;
+    order: 0;
+
+    @include breakpoint(mobile768) {
+      display: none;
+    }
+
+    .btn-hamburger {
+      @include flex-center;
+      @include square(length(44));
+      background: transparent;
+    }
+  }
 
   &-nav {
     @include flex-center-between;
     padding: length(8) length(0);
 
     .sitelogo {
+      order: 1;
+
+      @include breakpoint(mobile768) {
+        order: 0;
+      }
+      
       .logo {
         width: length(136);
         height: length(44);
@@ -22,9 +52,14 @@
     }
 
     .desktopsearch {
-      @include flex-center-vert;
-      width: length(460);
+      display: none;
+      width: length(500);
       margin-inline: auto;
+      background: rgba($white, 0.05);
+
+      @include breakpoint(mobile768) {
+        @include flex-center-vert;
+      }
 
       .searchfield {
         @include setBgColor(transparent, $white);
@@ -63,7 +98,11 @@
     }
 
     .desktoplist {
-      @include flex-end;
+      display: none;
+
+      @include breakpoint(mobile768) {
+        @include flex-end;
+      }
 
       &-item {
         list-style: none;
@@ -86,6 +125,39 @@
 
         @include hover {
           color: $primary;
+        }
+      }
+    }
+  }
+
+  .mobilesearch {
+    @include flex-center;
+    order: 2;
+
+    @include breakpoint(mobile768) {
+      display: none;
+    }
+
+    .btn-mobsearch {
+      background: transparent;
+      @include square(length(44));
+      @include flex-center;
+      padding: length(12);
+
+      svg {
+        @include wh100;
+
+        path {
+          fill: $gray-500;
+          @include transitionsall;
+        }
+      }
+
+      @include hover {
+        svg {
+          path {
+            fill: $primary;
+          }
         }
       }
     }

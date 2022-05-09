@@ -1,0 +1,23 @@
+/**=======================================================**
+                    VUE-CUSTOM TOOLTIP START
+**=======================================================**/
+
+.vue-custom-tooltip {
+  &::before {
+    border-top-color: $textLabel !important;
+  }
+
+  &::after {
+    background: $textLabel !important;
+  }
+
+  &.is-top {
+    &::before {
+      bottom: calc(100% + .1875rem) !important;
+    }
+  }
+}
+
+/**=======================================================**
+                    VUE-CUSTOM TOOLTIP END
+**=======================================================**/

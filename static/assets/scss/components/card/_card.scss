@@ -1,3 +1,7 @@
+/**=======================================================**
+                        DOCTOR-CARD START
+**=======================================================**/
+
 .card-doctor {
     background: $white;
     cursor: pointer;
@@ -5,15 +9,14 @@
     padding: length(28) length(26) length(30);
     overflow: hidden;
     @include flex-center-column;
+    text-align: center;
+    @include h100;
 
     @include breakpoint(desktop1200) {
         padding: length(20) length(18) length(24);
     }
 
     &-header {
-        // max-width: length(260);
-        // max-height: length(260);
-
         .card-thumbnail {
             max-width: length(260);
             max-height: length(260);
@@ -23,6 +26,11 @@
             img {
                 @include wh100;
                 object-fit: cover;
+                @include transitiontransform;
+
+                @include hover {
+                    @include transform(scale(1.05));
+                }
             }
         }
     }
@@ -44,15 +52,28 @@
             @include flex-center;
             gap: length(12);
 
-            .name {
-                color: $gray-700;
+            .naminfo {
+                width: calc(100% - 0.5rem);
+
+                .name {
+                    color: $gray-700;
+                    @include font-face($primaryFont, style('normal'), size(12), weight('normal'), line-height(16.8, 12));
+                    
+                    @include breakpoint(tab992) {
+                        @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
+                    }
+                
+                    @include breakpoint(desktop1400) {
+                        @include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+                    }
+                }
             }
 
             .status {
                 @include square(length(8));
                 @include circle;
                 background: $gray-300;
-                margin-top: length(4);
+                margin-top: length(-2);
 
                 &.active {
                     background: $activeBg;
@@ -63,6 +84,17 @@
         .doctorpost {
             .position {
                 color: $gray-700;
+                @include line-clamp-3;
+                height: length(68);
+                @include font-face($primaryFont, style('normal'), size(12), weight('normal'), line-height(16.8, 12));
+                
+                @include breakpoint(tab992) {
+                    @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
+                }
+            
+                @include breakpoint(desktop1400) {
+                    @include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+                }
             }
         }
 
@@ -71,19 +103,20 @@
             gap: length(8);
 
             .ratingtext {
-                // color: $yellow;
+                color: $yellow;
             }
 
             .ratinglist {
                 @include list-horizontal;
-                margin-top: length(-6);
+                align-items: baseline;
 
                 &-item {
-                    @include square(length(20));
+                    @include square(length(18));
                     overflow: hidden;
+                    @include flex-center;
 
                     svg {
-                        object-fit: contain;
+                        @include wh100;
                     }
                 }
             }
@@ -106,3 +139,7 @@
         }
     }
 }
+
+/**=======================================================**
+                        DOCTOR-CARD END
+**=======================================================**/

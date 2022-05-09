@@ -14,6 +14,7 @@ $textGray: #C4C4C4;
 $textPlaceholder: #B5B5BD;
 $subscribePlaceholder: #7A828A;
 $textLabel: #425466;
+$yellow: #F2B807;
 
 $gray-100:#F7FAFC;
 $gray-200:#EDF2F7;
@@ -28,6 +29,7 @@ $gray-800:#2D3748;
 =======================================================**/
 $bodyBg: #f5f5f5;
 $activeBg: #18BD78;
+$headerBg: #1f2024;
 
 
 $footerbg: rgb(0, 26, 57);
@@ -63,6 +65,7 @@ $thumb3-bg: #B4DC62;
 =======================================================**/
 $border-1: #FBFBFB;
 $footerBorder: #636262;
+$headerBorder: #eeeeee;
 
 /**=====================================================**
                     NORMAL-COLORS
@@ -102,7 +105,9 @@ $close-shadow: 0 0 .0625rem $shadow-3, 0 .625rem 1rem $shadow-4;
 
 $tab-shadow: 0 .25rem 1.25rem -0.125rem $shadow-5;
 $tab-shade: drop-shadow(0 0 .0625rem $shadow-3);
-$header-shadow: 0 0 .625rem 0 rgba($black, 0.1%);
+$header-shadow: 0 0 .625rem 0 rgba($black, 0.1);
+
+$head-shadow: 0 .0625rem .25rem 0 rgba($black, 0.1);
 
 /**=====================================================**
                         TEXT-SHADOWS
