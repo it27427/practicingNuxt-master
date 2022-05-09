@@ -59,7 +59,7 @@ a, span, p, input {
 		@include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
 	}
 
-	@include breakpoint(mobile768) {
+	@include breakpoint(tab992) {
 		@include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
 	}
 }

@@ -3,141 +3,142 @@
 **=======================================================**/
 
 .card-doctor {
-    background: $white;
-    cursor: pointer;
-    @include radius(15);
-    padding: length(28) length(26) length(30);
-    overflow: hidden;
+  background: $white;
+  cursor: pointer;
+  @include radius(15);
+  padding: length(28) length(26) length(30);
+  overflow: hidden;
+  @include flex-center-column;
+  text-align: center;
+  @include h100;
+
+  @include breakpoint(desktop1200) {
+    padding: length(20) length(18) length(24);
+  }
+
+  &-header {
+    .card-thumbnail {
+      max-width: length(260);
+      max-height: length(260);
+      @include double-radius(top, left, 15, top, right, 15);
+      overflow: hidden;
+
+      img {
+        @include wh100;
+        object-fit: cover;
+        @include transitiontransform;
+
+        @include hover {
+          @include transform(scale(1.05));
+        }
+      }
+    }
+  }
+
+  &-body {
+    padding: length(20) length(36) length(18);
     @include flex-center-column;
-    text-align: center;
-    @include h100;
+    gap: length(16);
+
+    @include breakpoint(desktop1400) {
+      padding: length(20) length(24) length(18);
+    }
 
     @include breakpoint(desktop1200) {
-        padding: length(20) length(18) length(24);
+      padding: length(18) length(16) length(14);
     }
 
-    &-header {
-        .card-thumbnail {
-            max-width: length(260);
-            max-height: length(260);
-            @include double-radius(top, left, 15, top, right, 15);
-            overflow: hidden;
+    .doctorname {
+      @include flex-center;
+      gap: length(12);
 
-            img {
-                @include wh100;
-                object-fit: cover;
-                @include transitiontransform;
+      .naminfo {
+        width: calc(100% - 0.5rem);
 
-                @include hover {
-                    @include transform(scale(1.05));
-                }
-            }
+        .name {
+          color: $gray-700;
+          @include font-face($primaryFont, style('normal'), size(12), weight('normal'), line-height(16.8, 12));
+
+          @include breakpoint(tab992) {
+            @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
+          }
+
+          @include breakpoint(desktop1400) {
+            @include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+          }
         }
+      }
+
+      .status {
+        @include square(length(8));
+        @include circle;
+        background: $gray-300;
+        margin-top: length(-2);
+
+        &.active {
+          background: $activeBg;
+        }
+      }
     }
 
-    &-body {
-        padding: length(20) length(36) length(18);
-        @include flex-center-column;
-        gap: length(16);
+    .doctorpost {
+      .position {
+        color: $gray-700;
+        @include line-clamp-3;
+        height: length(68);
+        @include font-face($primaryFont, style('normal'), size(12), weight('normal'), line-height(16.8, 12));
+
+        @include breakpoint(tab992) {
+          @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
+        }
 
         @include breakpoint(desktop1400) {
-            padding: length(20) length(24) length(18);
+          @include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
         }
-
-        @include breakpoint(desktop1200) {
-            padding: length(18) length(16) length(14);
-        }
-
-        .doctorname {
-            @include flex-center;
-            gap: length(12);
-
-            .naminfo {
-                width: calc(100% - 0.5rem);
-
-                .name {
-                    color: $gray-700;
-                    @include font-face($primaryFont, style('normal'), size(12), weight('normal'), line-height(16.8, 12));
-                    
-                    @include breakpoint(tab992) {
-                        @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
-                    }
-                
-                    @include breakpoint(desktop1400) {
-                        @include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
-                    }
-                }
-            }
-
-            .status {
-                @include square(length(8));
-                @include circle;
-                background: $gray-300;
-                margin-top: length(-2);
-
-                &.active {
-                    background: $activeBg;
-                }
-            }
-        }
-
-        .doctorpost {
-            .position {
-                color: $gray-700;
-                @include line-clamp-3;
-                height: length(68);
-                @include font-face($primaryFont, style('normal'), size(12), weight('normal'), line-height(16.8, 12));
-                
-                @include breakpoint(tab992) {
-                    @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
-                }
-            
-                @include breakpoint(desktop1400) {
-                    @include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
-                }
-            }
-        }
-
-        .ragings {
-            @include flex-center-vert;
-            gap: length(8);
-
-            .ratingtext {
-                color: $yellow;
-            }
-
-            .ratinglist {
-                @include list-horizontal;
-                align-items: baseline;
-
-                &-item {
-                    @include square(length(18));
-                    overflow: hidden;
-                    @include flex-center;
-
-                    svg {
-                        @include wh100;
-                    }
-                }
-            }
-        }
-
-        .profilelink {
-            .link {
-                // color: $tertiary;
-                text-align: center;
-                @include transitionscolor;
-
-                @include hover {
-                    // color: darken($tertiary, 15%);
-                }
-            }
-        }
-
-        .appointmentinfo {
-            @include w100;
-        }
+      }
     }
+
+    .ragings {
+      @include flex-center-vert;
+			align-items: flex-start;
+      gap: length(8);
+
+      .ratingtext {
+        color: $yellow;
+      }
+
+      .ratinglist {
+        @include list-horizontal;
+        align-items: baseline;
+
+        &-item {
+          @include square(length(18));
+          overflow: hidden;
+          @include flex-center;
+
+          svg {
+            @include wh100;
+          }
+        }
+      }
+    }
+
+    .profilelink {
+      .link {
+        // color: $tertiary;
+        text-align: center;
+        @include transitionscolor;
+
+        @include hover {
+          // color: darken($tertiary, 15%);
+        }
+      }
+    }
+
+    .appointmentinfo {
+      @include w100;
+    }
+  }
 }
 
 /**=======================================================**

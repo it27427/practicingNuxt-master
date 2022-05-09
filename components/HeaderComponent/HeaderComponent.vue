@@ -5,15 +5,13 @@
         <nav class="header-nav">
           <!-- HAMBURGER BUTTON START -->
           <div class="hamburger">
-            <b-button v-b-toggle.sidebar-variant class="btn-hamburger">
+            <button class="btn-hamburger" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4 18H20M4 6H20H4ZM4 12H12H4Z" stroke="#A0AEC0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-            </b-button>
+            </button>
 
-            <b-sidebar id="sidebar-variant" title="Sidebar" bg-variant="dark" text-variant="light" shadow>
-              test
-            </b-sidebar>
+            <MobileMenu/>
           </div>
           <!--- HAMBURGER BUTTON END --->
 
@@ -80,10 +78,16 @@
 <script>
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import MobileMenu from '~/components/MobileMenu/MobileMenu';
+
+// REGISTER SCROLL-TRIGGER
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: 'HeaderComponent',
+  components: {
+    MobileMenu
+  },
   mounted() {
     this.$nextTick(() => {
       this.headerScroll();

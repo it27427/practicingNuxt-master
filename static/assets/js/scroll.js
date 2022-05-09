@@ -1,0 +1,2 @@
+
+let scroll = new LocomotiveScroll();

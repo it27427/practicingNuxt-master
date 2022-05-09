@@ -5,7 +5,7 @@
 .header {
   background: $headerBg;
   box-shadow: $head-shadow;
-  position: sticky;
+  position: fixed;
   @include w100;
   top: 0;
   left: 0;
@@ -53,12 +53,16 @@
 
     .desktopsearch {
       display: none;
-      width: length(500);
+      width: length(320);
       margin-inline: auto;
       background: rgba($white, 0.05);
 
       @include breakpoint(mobile768) {
         @include flex-center-vert;
+      }
+
+      @include breakpoint(tab992) {
+        width: length(500);
       }
 
       .searchfield {
@@ -118,12 +122,20 @@
         color: $white;
         display: inline-block;
         font-weight: 500;
-        padding: length(10.812) length(16);
+        padding: length(10.812) length(8);
         letter-spacing: length(0.32);
         text-align: center;
         @include transitionscolor;
 
-        @include hover {
+        @include breakpoint(tab992) {
+          padding: length(10.812) length(16);
+        }
+
+        &:hover:not(.nuxt-link-exact-active) {
+          color: $primary;
+        }
+
+        &.nuxt-link-exact-active {
           color: $primary;
         }
       }
