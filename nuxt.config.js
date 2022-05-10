@@ -24,7 +24,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     {src: '~/static/assets/js/bootstrap.bundle.min.js', mode: 'client'},
-    // {src: '~/static/assets/js/scroll.js', mode: 'client'}
+    {src: '~/static/assets/js/canvas.js', mode: 'client'}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

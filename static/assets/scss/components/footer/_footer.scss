@@ -3,10 +3,11 @@
 **=======================================================**/
 .footer {
   background: $headerBg;
-  padding: length(32) length(20) length(40);
+  padding: length(32) length(0) length(40);
+  position: relative;
   
   @include breakpoint(tab992) {
-    padding: length(64) length(20) length(32);
+    padding: length(64) length(0) length(32);
   }
 
   &-content {
@@ -18,10 +19,14 @@
       @include w100;
       height: length(1);
       background: $gray-500;
+      position: relative;
+      z-index: 2;
     }
 
     .footerlogo {
       @include flex-center;
+      position: relative;
+      z-index: 2;
 
       @include breakpoint(mobile768) {
         justify-content: flex-start;
@@ -30,6 +35,8 @@
 
     .footeraboutinfo {
       padding: length(40) length(0);
+      position: relative;
+      z-index: 2;
 
       @include breakpoint(tab992) {
         padding: length(0);
@@ -39,6 +46,8 @@
     .footerinfo {
       @include flex-center-column;
       gap: length(24);
+      position: relative;
+      z-index: 2;
 
       @include breakpoint(tab992) {
         align-items: flex-start;
@@ -123,6 +132,8 @@
 
     .copyright {
       text-align: center;
+      position: relative;
+      z-index: 2;
 
       &-text {
         color: $white;

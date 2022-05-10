@@ -1,7 +1,9 @@
 <template>
-  <div>
-    this is doctor page
-  </div>
+	<client-only>
+    <div>
+      this is doctor page
+    </div>
+	</client-only>
 </template>
 
 <script>

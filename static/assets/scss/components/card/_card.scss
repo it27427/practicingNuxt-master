@@ -6,14 +6,14 @@
   background: $white;
   cursor: pointer;
   @include radius(15);
-  padding: length(28) length(26) length(30);
+  padding: length(16) length(8);
   overflow: hidden;
   @include flex-center-column;
   text-align: center;
   @include h100;
 
   @include breakpoint(desktop1200) {
-    padding: length(20) length(18) length(24);
+    padding: length(28) length(26) length(30);
   }
 
   &-header {
@@ -36,16 +36,16 @@
   }
 
   &-body {
-    padding: length(20) length(36) length(18);
     @include flex-center-column;
     gap: length(16);
-
-    @include breakpoint(desktop1400) {
-      padding: length(20) length(24) length(18);
-    }
+    padding: length(8);
 
     @include breakpoint(desktop1200) {
-      padding: length(18) length(16) length(14);
+      padding: length(16);
+    }
+
+    @include breakpoint(desktop1400) {
+      padding: length(20);
     }
 
     .doctorname {
@@ -58,6 +58,8 @@
         .name {
           color: $gray-700;
           @include font-face($primaryFont, style('normal'), size(12), weight('normal'), line-height(16.8, 12));
+          @include text-overflow;
+          @include transitionscolor;
 
           @include breakpoint(tab992) {
             @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
@@ -65,6 +67,10 @@
 
           @include breakpoint(desktop1400) {
             @include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+          }
+
+          @include hover {
+            color: $black;
           }
         }
       }
@@ -83,7 +89,7 @@
 
     .doctorpost {
       .position {
-        color: $gray-700;
+        color: $gray-600;
         @include line-clamp-3;
         height: length(68);
         @include font-face($primaryFont, style('normal'), size(12), weight('normal'), line-height(16.8, 12));
@@ -98,43 +104,6 @@
       }
     }
 
-    .ragings {
-      @include flex-center-vert;
-			align-items: flex-start;
-      gap: length(8);
-
-      .ratingtext {
-        color: $yellow;
-      }
-
-      .ratinglist {
-        @include list-horizontal;
-        align-items: baseline;
-
-        &-item {
-          @include square(length(18));
-          overflow: hidden;
-          @include flex-center;
-
-          svg {
-            @include wh100;
-          }
-        }
-      }
-    }
-
-    .profilelink {
-      .link {
-        // color: $tertiary;
-        text-align: center;
-        @include transitionscolor;
-
-        @include hover {
-          // color: darken($tertiary, 15%);
-        }
-      }
-    }
-
     .appointmentinfo {
       @include w100;
     }
@@ -143,4 +112,166 @@
 
 /**=======================================================**
                         DOCTOR-CARD END
+**=======================================================**/
+
+/**=======================================================**
+                        CARD-TEST START
+**=======================================================**/
+
+.card-test {
+  background: $gray-200;
+  cursor: pointer;
+  @include radius(15);
+  overflow: hidden;
+  @include flex-center-column;
+  text-align: center;
+  @include h100;
+
+
+  &-header {
+    .card-thumbnail {
+      overflow: hidden;
+      @include w100;
+      height: length(140);
+      
+      @include breakpoint(mobile768) {
+        height: length(180);
+      }
+      
+      @include breakpoint(tab992) {
+        height: length(200);
+      }
+
+      img {
+        @include w100;
+        object-fit: cover;
+        @include transitiontransform;
+
+        @include hover {
+          @include transform(scale(1.05));
+        }
+      }
+    }
+  }
+
+  &-body {
+    padding: length(20);
+
+    .testname {
+      color: $gray-700;
+      @include font-face($primaryFont, style('normal'), size(14), weight('medium'), line-height(19.6, 14));
+      @include transitionscolor;
+      
+      @include breakpoint(mobile768) {
+        @include font-face($primaryFont, style('normal'), size(18), weight('medium'), line-height(25.2, 18));
+      }
+
+      @include hover {
+        color: $black;
+      }
+    }
+  }
+}
+
+/**=======================================================**
+                        CARD-TEST END
+**=======================================================**/
+
+/**=======================================================**
+                        CARD-BLOG START
+**=======================================================**/
+
+.card-blog {
+  background: $white;
+  cursor: pointer;
+  overflow: hidden;
+  @include flex-center-column;
+  text-align: center;
+  @include h100;
+  
+
+  &-header {
+    overflow: hidden;
+    @include w100;
+
+    img {
+      @include wh100;
+      object-fit: cover;
+      @include transitiontransform;
+
+      @include hover {
+        @include transform(scale(1.05));
+      }
+    }
+  }
+
+  &-body {
+    padding: length(20);
+    height: length(65);
+    @include flex-center;
+
+    .card-blog-title {
+      color: $gray-700;
+      @include font-face($secondaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
+      @include transitionscolor;
+      
+      @include breakpoint(mobile768) {
+        @include font-face($secondaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+      }
+
+      @include hover {
+        color: $black;
+      }
+    }
+  }
+
+  &.blog-six,
+  &.blog-nine {
+    @include breakpoint(tab992) {
+      align-self: center;
+      justify-self: center;
+    }
+  }
+
+  &.blog-seven {
+    @include breakpoint(tab992) {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+  }
+
+  &.blog-eight {
+    @include breakpoint(tab992) {
+      grid-column-start: 4;
+      grid-column-end: 5;
+    }
+  }
+
+  &.blog-large {
+    @include breakpoint(tab992) {
+      grid-row-end: span 2;
+    }
+
+    .card-blog-header {
+      @include breakpoint(tab992) {
+        height: calc(100% - 4.0625rem);
+      }
+    }
+  }
+
+  &.blog-full {
+    @include breakpoint(tab992) {
+      grid-row-end: span 3;
+    }
+
+    .card-blog-header {
+      @include breakpoint(tab992) {
+        height: calc(100% - 4.0625rem);
+      }
+    }
+  }
+}
+
+/**=======================================================**
+                        CARD-BLOG END
 **=======================================================**/

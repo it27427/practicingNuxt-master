@@ -1,0 +1,40 @@
+
+/**=======================================================**
+                    CATEGORY-SIDEBAR START
+**=======================================================**/
+
+.categorysidebar {
+  @include flex-column;
+  gap: length(24);
+
+  &-header {
+    .categorysidebar-title {
+      color: $gray-700;
+      @include font-face($secondaryFont, style('normal'), size(20), weight('semibold'), line-height(28, 20));
+
+      @include breakpoint(mobile768) {
+        @include font-face($secondaryFont, style('normal'), size(24), weight('semibold'), line-height(33.6, 24));
+      }
+    }
+  }
+
+  &-body {
+    .sidebarlist {
+      @include list-vertical;
+      gap: length(12);
+
+      &-link {
+        color: $gray-700;
+        @include transitionscolor;
+
+        @include hover {
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+/**=======================================================**
+                    CATEGORY-SIDEBAR END
+**=======================================================**/
