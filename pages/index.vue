@@ -63,12 +63,14 @@
       <!-- DOCTORSINFO-SECTION START -->
       <section class="doctorsinfo">
         <div class="container p-0">
-          <div class="doctorsinfo-header">
-            <h1 class="doctorsinfo-title">Doctors Info</h1>
-          </div>
+          <div class="doctorsinfo-content">
+            <div class="doctorsinfo-header">
+              <h1 class="doctorsinfo-title">Doctors List</h1>
+            </div>
 
-          <div class="doctorsinfo-body">
-            <DocInfo/>
+            <div class="doctorsinfo-body">
+              <DocInfo/>
+            </div>
           </div>
         </div>
       </section>
@@ -78,7 +80,7 @@
 </template>
 
 <script>
-import SwiperSlider from '~/components/Slider/SwiperSlider'
+import SwiperSlider from '~/components/Slider/SwiperSlider';
 import Test from '~/components/Test/Test';
 import Date from '~/components/Date/Date';
 import BlogGrid from '~/components/BlogGrid/BlogGrid';
@@ -92,6 +94,13 @@ export default {
     Date,
     BlogGrid,
     DocInfo,
-  }
+  },
+  // mounted() {
+  //   if(process.client) {
+  //     if(document.querySelector('#mobileMenu') !== null && document.querySelector('#mobileMenu') !== undefined) {
+  //       document.querySelector('#mobileMenu').offcanvas('hide');
+  //     }
+  //   }
+  // }
 }
 </script>

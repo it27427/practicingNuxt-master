@@ -19,15 +19,15 @@
                 <div class="footerinfo-body">
                   <ul class="footerlist">
                       <li class="footerlist-item">
-                        <a href="case-study.html" class="footerlist-link">Doctors</a>
+                        <nuxt-link to="/doctors" class="footerlist-link">Doctors</nuxt-link>
                       </li>
 
                       <li class="footerlist-item">
-                        <a href="contact.html" class="footerlist-link">Hospital</a>
+                        <nuxt-link to="/hospital" class="footerlist-link">Hospital</nuxt-link>
                       </li>
 
                       <li class="footerlist-item">
-                        <a href="products.html" class="footerlist-link">Blog</a>
+                        <nuxt-link to="/blog" class="footerlist-link">Blog</nuxt-link>
                       </li>
                   </ul>
                 </div>

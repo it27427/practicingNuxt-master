@@ -13,6 +13,10 @@
     <client-only>
       <FooterComponent />
     </client-only>
+
+    <client-only>
+      <BackTop />
+    </client-only>
   </div>
 </template>
 
@@ -20,12 +24,14 @@
 import HeaderComponent from '~/components/HeaderComponent/HeaderComponent';
 import FooterComponent from '~/components/FooterComponent/FooterComponent';
 import Gap from '~/components/Gap/Gap';
+import BackTop from '~/components/BackTop/BackTop';
 
 export default {
   components: {
     HeaderComponent,
     FooterComponent,
-    Gap
+    Gap,
+    BackTop
   }
 }
 </script>

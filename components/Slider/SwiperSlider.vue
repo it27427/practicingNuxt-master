@@ -2,7 +2,7 @@
   <div class="container p-0">
     <div ref="swiper" class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div v-for="(doctor, i) in doctorInfoList" :key="i"  class="swiper-slide">
+        <div v-for="(doctor, i) in doctorInfoList" :key="i" class="swiper-slide">
           <DoctorCard :docinfo="doctor" />
         </div>
       </div>

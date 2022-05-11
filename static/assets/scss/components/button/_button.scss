@@ -1,0 +1,23 @@
+.btn-backtop {
+  @include square(length(44));
+  @include circle;
+  @include flex-center;
+  padding: length(12);
+  position: fixed;
+  bottom: length(24);
+  right: length(24);
+  background: $textLabel;
+  opacity: 0.7;
+  @include transitionsall;
+
+  svg {
+    @include wh100;
+    path {
+      fill: $white;
+    }
+  }
+
+  @include hover {
+    opacity: 1;
+  }
+}

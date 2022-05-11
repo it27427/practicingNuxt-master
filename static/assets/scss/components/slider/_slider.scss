@@ -35,3 +35,87 @@
 .swiper-button-next {
   right: 0 !important;
 }
+
+.sliderinfo {
+  @include flex-column;
+  gap: length(24);
+  overflow: hidden;
+
+  .gallery-top {
+    .swiper-wrapper {
+      .swiper-slide {
+        @include border(solid, 1, $gray-300);
+        padding: length(40);
+        @include flex-center;
+
+        @include breakpoint(tab992) {
+          border: none;
+          background: $gray-100;
+        }
+
+        .slider-details {
+          @include flex-center;
+        }
+      }
+    }
+  }
+
+  .gallery-thumbs {
+    position: relative;
+
+    .swiper-wrapper {
+      .swiper-slide {
+        cursor: pointer;
+        
+        .slide-details {
+          @include flex-center;
+      
+        }
+
+        &-active {
+          .slide-details {
+            .card-slide {
+              box-shadow: $box-shadow-2;
+              filter: $drop-shadow-1;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      background: transparent;
+      width: length(24) !important;
+      height: length(24) !important;
+      @include circle;
+      margin: 0;
+      padding: 0;
+      top: 50%;
+      @include transform(translateY(-50%));
+      cursor: pointer;
+
+      &::after {
+        display: none;
+      }
+
+      svg {
+        @include wh100;
+
+        path {
+          fill: $gray-300;
+        }
+      }
+
+      @include hover {
+        svg {
+          path {
+            fill: $primary;
+          }
+        }
+      }
+    }
+  }
+}

@@ -15,6 +15,8 @@ module.exports = {
     "no-console": "off",
     "no-new": 0,
     'vue/multi-word-component-names': 'off',
+    "vue/attribute-hyphenation": "off",
+    'nuxt/no-cjs-in-config': 'off',
     "import/no-named-as-default": 0
   },
 }

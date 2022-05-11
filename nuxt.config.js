@@ -8,7 +8,14 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel:"stylesheet", href: '/assets/css/bootstrap.min.css' }
+    ],
+    script: [
+      { src: '/assets/js/bootstrap.bundle.min.js', mode: 'client', defer: 'true' },
+      { src: '/assets/js/canvas.js', mode: 'client', defer: 'true' }
+    ],
     bodyAttrs: {
       class: 'p-0'
     }
@@ -16,15 +23,11 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    {src: '~/static/assets/css/bootstrap.min.css'},
-    {src: '~/static/assets/css/up_btn.css'},
-    {src: '~/static/assets/scss/style.scss'}
+    { src: '~/static/assets/scss/style.scss' }
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    {src: '~/static/assets/js/bootstrap.bundle.min.js', mode: 'client'},
-    {src: '~/static/assets/js/canvas.js', mode: 'client'}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

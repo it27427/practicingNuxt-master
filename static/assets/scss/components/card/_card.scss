@@ -275,3 +275,111 @@
 /**=======================================================**
                         CARD-BLOG END
 **=======================================================**/
+
+/**=======================================================**
+                        CARD-SLIDER START
+**=======================================================**/
+
+.card-slider {
+  background: $white;
+  cursor: pointer;
+  overflow: hidden;
+  @include flex-center-column;
+  gap: length(24);
+  text-align: center;
+  @include h100;
+  
+
+  &-header {
+    @include w100;
+    @include flex-center;
+
+    .card-thumbnail {
+      @include w100;
+      height: length(200);
+      overflow: hidden;
+
+      @include breakpoint(mobile768) {
+        height: length(260);
+      }
+
+      @include breakpoint(tab992) {
+        height: length(390);
+      }
+
+      img {
+        @include wh100;
+        object-fit: cover;
+        @include transitiontransform;
+  
+        @include hover {
+          @include transform(scale(1.05));
+        }
+      }
+    }
+  }
+
+  &-body {
+    @include flex-center-column;
+    gap: length(8);
+    padding: length(0) length(24) length(24);
+
+    .card-blog-title {
+      color: $gray-700;
+      @include font-face($secondaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
+      @include transitionscolor;
+      
+      @include breakpoint(mobile768) {
+        @include font-face($secondaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+      }
+
+      @include hover {
+        color: $black;
+      }
+    }
+  }
+}
+
+/**=======================================================**
+                        CARD-SLIDER END
+**=======================================================**/
+
+/**=======================================================**
+                        CARD-SLIDE START
+**=======================================================**/
+
+.card-slide {
+  @include flex-center-column;
+  gap: length(10);
+  text-align: center;
+  @include border(solid, 1, $gray-300);
+
+  &-header {
+    @include w100;
+    height: length(120);
+
+    .card-thumbnail {
+      @include wh100;
+  
+      img {
+        @include wh100;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &-body {
+    padding: length(10) length(8);
+    
+    .doctorname {
+      .name {
+        color: $gray-700;
+        @include font-face($primaryFont, style('normal'), size(12), weight('normal'), line-height(16.8, 12));
+      }
+    }
+  }
+}
+
+/**=======================================================**
+                        CARD-SLIDE END
+**=======================================================**/
