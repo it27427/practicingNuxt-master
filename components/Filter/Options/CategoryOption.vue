@@ -1,13 +1,12 @@
 <template>
-  <a href="#" class="sidebarlist-link">
-    <span class="categorytitle">{{ category.title }}</span>
-    <span class="categorycounter">({{ category.counter }})</span>
-  </a>
+  <span>
+    {{ category.title }}
+  </span>
 </template>
 
 <script>
   export default {
-    name: 'CategorySidebar',
+    name: 'CategoryOption',
     props: {
       ctgInfo: {
         type: Object,

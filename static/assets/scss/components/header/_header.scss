@@ -121,10 +121,11 @@
       &-link {
         color: $white;
         display: inline-block;
-        font-weight: 500;
+        @include font-face($primaryFont, style('normal'), size(15), weight('bold'), line-height(21, 15));
         padding: length(10.812) length(8);
         letter-spacing: length(0.32);
         text-align: center;
+        text-transform: uppercase;
         @include transitionscolor;
 
         @include breakpoint(tab992) {

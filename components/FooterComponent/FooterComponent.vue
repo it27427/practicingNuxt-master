@@ -1,16 +1,16 @@
 <template>
-  <client-only>
-    <footer class="footer">
-      <div class="footer-content">
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footerupper">
         <div class="container p-0">
-          <div class="row">
-            <div class="col-md-4 col-12">
+          <div class="row g-4">
+            <div class="col-md-3 col-12">
               <div class="footerlogo">
                 <img src="~/static/assets/images/logo/logo.png" alt="footer-logo">
               </div>
             </div>
 
-            <div class="col-md-4 col-12">
+            <div class="col-md-3 col-12">
               <div class="footerinfo footeraboutinfo">
                 <div class="footerinfo-header">
                   <h4 class="footerinfo-title">About</h4>
@@ -34,7 +34,31 @@
               </div>
             </div>
 
-            <div class="col-md-4 col-12">
+            <div class="col-md-3 col-12">
+              <div class="footerinfo footeraboutinfo">
+                <div class="footerinfo-header">
+                  <h4 class="footerinfo-title">Links</h4>
+                </div>
+
+                <div class="footerinfo-body">
+                  <ul class="footerlist">
+                      <li class="footerlist-item">
+                        <nuxt-link to="/termsofuse" class="footerlist-link">Terms of use</nuxt-link>
+                      </li>
+
+                      <li class="footerlist-item">
+                        <nuxt-link to="/privacypolicy" class="footerlist-link">Privacy Policy</nuxt-link>
+                      </li>
+
+                      <li class="footerlist-item">
+                        <nuxt-link to="/contact" class="footerlist-link">Contact</nuxt-link>
+                      </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-12">
               <div class="footerinfo">
                 <div class="footerinfo-header">
                   <h4 class="footerinfo-title">Follow us</h4>
@@ -111,9 +135,9 @@
             </div>
           </div>
         </div>
-          
-        <div class="divider"></div>
+      </div>
 
+      <div class="footerlower">
         <div class="container p-0">
           <div class="row g-0 justify-content-center">
             <div class="copyright">
@@ -124,10 +148,8 @@
           </div>
         </div>
       </div>
-
-      <canvas id='world'></canvas>
-    </footer>
-  </client-only>
+    </div>
+  </footer>
 </template>
 
 <script>

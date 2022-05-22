@@ -208,3 +208,7 @@ input[type="date"]:valid::before {
 select {
     cursor: pointer;
 }
+
+.modal-backdrop {
+    width: 100%;
+}

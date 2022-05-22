@@ -1,24 +1,30 @@
 <template>
   <div class="row g-5">
     <div class="col-lg-9 col-md-8 col-12">
-      <SyncSlider/>
+      <DoctorGrid />
     </div>
 
     <div class="col-lg-3 col-md-4 col-12">
-      <CategorySidebar/>
+      <div class="categories">
+        <Categories />
+
+        <div class="seeall">
+          <a href="#" class="seeall-link">See All</a>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import CategorySidebar from '~/components/CategorySidebar/CategorySidebar';
-import SyncSlider from '~/components/Slider/SyncSlider';
+import Categories from '~/components/Categories/Categories';
+import DoctorGrid from '~/components/DoctorGrid/DoctorGrid';
 
 export default {
   name: 'DocInfo',
   components: {
-    CategorySidebar,
-    SyncSlider,
+    Categories,
+    DoctorGrid
   }
 }
 </script>

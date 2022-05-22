@@ -2,142 +2,126 @@
                         FOOTER SECTION START
 **=======================================================**/
 .footer {
-  background: $headerBg;
-  padding: length(32) length(0) length(40);
-  position: relative;
+  background: $footerbg;
+  padding: length(48) length(0) length(0);
   
   @include breakpoint(tab992) {
-    padding: length(64) length(0) length(32);
+    padding: length(64) length(0) length(0);
   }
 
   &-content {
     @include flex-column;
     
-    .divider {
-      margin: length(32) length(0);
-      min-width: 100%;
-      @include w100;
-      height: length(1);
-      background: $gray-500;
-      position: relative;
-      z-index: 2;
-    }
+    .footerupper {
+      padding: length(0) length(0) length(40);
 
-    .footerlogo {
-      @include flex-center;
-      position: relative;
-      z-index: 2;
-
-      @include breakpoint(mobile768) {
-        justify-content: flex-start;
-      }
-    }
-
-    .footeraboutinfo {
-      padding: length(40) length(0);
-      position: relative;
-      z-index: 2;
-
-      @include breakpoint(tab992) {
-        padding: length(0);
-      }
-    }
-
-    .footerinfo {
-      @include flex-center-column;
-      gap: length(24);
-      position: relative;
-      z-index: 2;
-
-      @include breakpoint(tab992) {
-        align-items: flex-start;
-      }
-
-      &-header {
-        .footerinfo-title {
-          color: $white;
-          @include font-face($primaryFont, style('normal'), size(18), weight('semibold'), line-height(24, 18));
-          font-feature-settings: 'salt';
-
-          @include breakpoint(tab992) {
-            @include font-face($primaryFont, style('normal'), size(22), weight('semibold'), line-height(28, 22));
-          }
+      .footerlogo {
+        @include flex-center;
+  
+        @include breakpoint(mobile768) {
+          justify-content: flex-start;
         }
       }
-
-      &-body {
+  
+      .footerinfo {
         @include flex-center-column;
-        gap: length(40);
-
+        gap: length(24);
+  
         @include breakpoint(tab992) {
           align-items: flex-start;
         }
-
-        .footerlist {
-          @include list-vertical;
-          align-items: center;
-          gap: length(12);
-
+  
+        &-header {
+          .footerinfo-title {
+            color: $white;
+            @include font-face($primaryFont, style('normal'), size(18), weight('semibold'), line-height(24, 18));
+            font-feature-settings: 'salt';
+  
+            @include breakpoint(tab992) {
+              @include font-face($primaryFont, style('normal'), size(22), weight('semibold'), line-height(28, 22));
+            }
+          }
+        }
+  
+        &-body {
+          @include flex-center-column;
+          gap: length(40);
+  
           @include breakpoint(tab992) {
             align-items: flex-start;
           }
-
-          &-link {
-            color: $white;
-            position: relative;
-            @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(21, 14));
-            font-feature-settings: 'salt';
-        
+  
+          .footerlist {
+            @include list-vertical;
+            align-items: center;
+            gap: length(12);
+  
             @include breakpoint(tab992) {
-              @include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(25.92, 16));
+              align-items: flex-start;
             }
-
-            &::before {
-              content: '';
-              position: absolute;
-              bottom: length(1);
-              left: 0;
-              height: length(1);
-              width: 0;
-              background: $primary;
-              transition: .5s;
-            }
-
-            @include hover {
-              color: $primary;
-
+  
+            &-link {
+              color: $white;
+              position: relative;
+              @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(21, 14));
+              font-feature-settings: 'salt';
+          
+              @include breakpoint(tab992) {
+                @include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(25.92, 16));
+              }
+  
               &::before {
-                @include w100;
+                content: '';
+                position: absolute;
+                bottom: length(1);
+                left: 0;
+                height: length(1);
+                width: 0;
+                background: $primary;
+                transition: .5s;
+              }
+  
+              @include hover {
+                color: $primary;
+  
+                &::before {
+                  @include w100;
+                }
+              }
+            }
+          }
+  
+          .social-list {
+            @include list-horizontal;
+            gap: length(24);
+  
+            &-link {
+              @include square(length(40));
+              @include flex-center;
+              overflow: hidden;
+  
+              svg {
+                @include wh100;
               }
             }
           }
         }
-
-        .social-list {
-          @include list-horizontal;
-          gap: length(24);
-
-          &-link {
-            @include square(length(40));
-            @include flex-center;
-            overflow: hidden;
-
-            svg {
-              @include wh100;
-            }
-          }
-        }
       }
     }
 
-    .copyright {
-      text-align: center;
-      position: relative;
-      z-index: 2;
+    .footerlower {
+      padding: length(24);
+      background: darken($headerBg, 25%);
 
-      &-text {
-        color: $white;
-        @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
+      .copyright {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+  
+        &-text {
+          color: $white;
+          @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
+        }
       }
     }
   }

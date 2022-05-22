@@ -56,17 +56,17 @@
         width: calc(100% - 0.5rem);
 
         .name {
-          color: $gray-700;
-          @include font-face($primaryFont, style('normal'), size(12), weight('normal'), line-height(16.8, 12));
+          color: $headerBg;
+          @include font-face($primaryFont, style('normal'), size(12), weight('bold'), line-height(16.8, 12));
           @include text-overflow;
           @include transitionscolor;
 
           @include breakpoint(tab992) {
-            @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
+            @include font-face($primaryFont, style('normal'), size(14), weight('bold'), line-height(19.6, 14));
           }
 
           @include breakpoint(desktop1400) {
-            @include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+            @include font-face($primaryFont, style('normal'), size(16), weight('bold'), line-height(22.4, 16));
           }
 
           @include hover {
@@ -89,17 +89,17 @@
 
     .doctorpost {
       .position {
-        color: $gray-600;
+        color: $gray-800;
         @include line-clamp-3;
         height: length(68);
-        @include font-face($primaryFont, style('normal'), size(12), weight('normal'), line-height(16.8, 12));
+        @include font-face($primaryFont, style('normal'), size(12), weight('medium'), line-height(16.8, 12));
 
         @include breakpoint(tab992) {
-          @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
+          @include font-face($primaryFont, style('normal'), size(14), weight('medium'), line-height(19.6, 14));
         }
 
         @include breakpoint(desktop1400) {
-          @include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+          @include font-face($primaryFont, style('normal'), size(16), weight('medium'), line-height(22.4, 16));
         }
       }
     }
@@ -184,43 +184,107 @@
 .card-blog {
   background: $white;
   cursor: pointer;
-  overflow: hidden;
-  @include flex-center-column;
-  text-align: center;
-  @include h100;
-  
 
   &-header {
+    position: relative;
+    @include wh100;
     overflow: hidden;
-    @include w100;
+    text-align: center;
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include wh100;
+      background: rgba($black, 0.5);
+      z-index: 1;
+    }
+
+    .bloginfo {
+      @include position-center;
+      z-index: 2;
+      @include w100;
+      padding: length(16);
+      @include flex-column;
+      gap: length(12);
+      @include transitionsall;
+
+      .card-blog-title {
+        color: $white;
+        @include font-face($secondaryFont, style('normal'), size(16), weight('semibold'), line-height(22.4, 16));
+        @include transitionsall;
+        
+        @include breakpoint(mobile768) {
+          @include font-face($secondaryFont, style('normal'), size(20), weight('semibold'), line-height(28, 20));
+        }
+      }
+
+      .details {
+        @include flex-center;
+        gap: length(8);
+        flex-wrap: wrap;
+
+        .author {
+          @include flex-center-vert;
+          gap: length(4);
+
+          .icon {
+            display: inline-block;
+            margin-top: length(-2);
+
+            svg {
+              path {
+                fill: rgba($white, 0.9);
+              }
+            }
+          }
+
+          &-name {
+            color: rgba($white, 0.9);
+            @include font-face($secondaryFont, style('normal'), size(12), weight('semibold'), line-height(16.8, 12));
+          }
+        }
+
+        .date {
+          @include flex-center-vert;
+          gap: length(4);
+
+          .icon {
+            display: inline-block;
+            margin-top: length(-2);
+
+            svg {
+              path {
+                fill: rgba($white, 0.75);
+              }
+            }
+          }
+
+          &-text {
+            color: rgba($white, 0.75);
+            @include font-face($secondaryFont, style('normal'), size(12), weight('semibold'), line-height(16.8, 12));
+          }
+        }
+      }
+    }
 
     img {
       @include wh100;
       object-fit: cover;
       @include transitiontransform;
+    }
 
-      @include hover {
+    @include hover {
+      img {
         @include transform(scale(1.05));
       }
-    }
-  }
 
-  &-body {
-    padding: length(20);
-    height: length(65);
-    @include flex-center;
+      .bloginfo {
+        // margin-top: length(-8);
 
-    .card-blog-title {
-      color: $gray-700;
-      @include font-face($secondaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
-      @include transitionscolor;
-      
-      @include breakpoint(mobile768) {
-        @include font-face($secondaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
-      }
-
-      @include hover {
-        color: $black;
+        .card-blog-title {
+          color: $gray-300;
+        }
       }
     }
   }
@@ -233,41 +297,15 @@
     }
   }
 
-  &.blog-seven {
-    @include breakpoint(tab992) {
-      grid-column-start: 2;
-      grid-column-end: 3;
-    }
-  }
-
-  &.blog-eight {
-    @include breakpoint(tab992) {
-      grid-column-start: 4;
-      grid-column-end: 5;
-    }
-  }
-
   &.blog-large {
     @include breakpoint(tab992) {
       grid-row-end: span 2;
-    }
-
-    .card-blog-header {
-      @include breakpoint(tab992) {
-        height: calc(100% - 4.0625rem);
-      }
     }
   }
 
   &.blog-full {
     @include breakpoint(tab992) {
       grid-row-end: span 3;
-    }
-
-    .card-blog-header {
-      @include breakpoint(tab992) {
-        height: calc(100% - 4.0625rem);
-      }
     }
   }
 }
@@ -288,7 +326,6 @@
   gap: length(24);
   text-align: center;
   @include h100;
-  
 
   &-header {
     @include w100;
@@ -345,6 +382,75 @@
 **=======================================================**/
 
 /**=======================================================**
+                        CARD-SLIDER START
+**=======================================================**/
+
+.card-gallery {
+  background: $gray-200;
+  cursor: pointer;
+  overflow: hidden;
+  @include flex-center-column;
+  gap: length(24);
+  text-align: center;
+  @include h100;
+
+  &-header {
+    @include w100;
+    @include flex-center;
+
+    .card-thumbnail {
+      @include w100;
+      height: length(200);
+      overflow: hidden;
+
+      @include breakpoint(mobile768) {
+        height: length(260);
+      }
+
+      @include breakpoint(tab992) {
+        height: length(390);
+      }
+
+      img {
+        @include wh100;
+        object-fit: containW;
+        @include transitiontransform;
+  
+        @include hover {
+          @include transform(scale(1.05));
+        }
+      }
+    }
+  }
+
+  &-body {
+    @include flex-center-column;
+    gap: length(8);
+    padding: length(0) length(24) length(24);
+
+    .doctorname {
+      .name {
+        color: $gray-700;
+        @include font-face($secondaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
+        @include transitionscolor;
+        
+        @include breakpoint(mobile768) {
+          @include font-face($secondaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+        }
+  
+        @include hover {
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+/**=======================================================**
+                        CARD-SLIDER END
+**=======================================================**/
+
+/**=======================================================**
                         CARD-SLIDE START
 **=======================================================**/
 
@@ -375,6 +481,48 @@
       .name {
         color: $gray-700;
         @include font-face($primaryFont, style('normal'), size(12), weight('normal'), line-height(16.8, 12));
+      }
+    }
+  }
+}
+
+/**=======================================================**
+                        CARD-SLIDE END
+**=======================================================**/
+
+/**=======================================================**
+                        CARD-SLIDE START
+**=======================================================**/
+
+.card-thumb {
+  @include flex-center-column;
+  gap: length(10);
+  text-align: center;
+  @include w100;
+  background: $white;
+  box-shadow: $box-shadow-2;
+
+  &-header {
+    @include w100;
+    height: length(100);
+
+    .card-thumbnail {
+      @include wh100;
+  
+      img {
+        @include wh100;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &-body {
+    padding: length(10) length(8);
+    
+    .doctorname {
+      .name {
+        color: $gray-700;
+        @include font-face($primaryFont, style('normal'), size(12), weight('medium'), line-height(16.8, 12));
       }
     }
   }

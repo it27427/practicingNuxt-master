@@ -1,13 +1,12 @@
 /**==================================================
                 GOOGLE FONT CDN (INTER)
 ==================================================**/
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&family=Oswald:wght@200;300;400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Nunito:wght@200;300;400;500;600;700&display=swap');
 /**==================================================
                 FONTS INFO START
 ==================================================**/
 $primaryFont: 'Nunito';
-$secondaryFont: 'Oswald';
+$secondaryFont: 'Montserrat';
 $font-styles: ('normal': normal, 'italic': italic, 'oblique': oblique);
 $font-weights: ('thin':100, 'extralight': 200, 'light': 300, 'normal': normal, 'medium': 500, 'semibold': 600, 'bold': 700, 'black': 900);
 

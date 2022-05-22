@@ -4,11 +4,17 @@
       <!-- HOME-SLIDER SECTION START -->
       <div class="home-slider">
         <div class="container p-0">
-          <div class="home-slider-content">
+          <div class="home-slider-content">            
+            <!-- HOME-SLIDER BODY START -->
+            <div class="home-slider-body">
+              <SwiperSlider />
+            </div>
+            <!--- HOME-SLIDER BODY END --->
+
             <!-- HOME-SLIDER HEADER START -->
             <header class="home-slider-header">
               <div class="sliderinfo">
-                <h1 class="slider-title">Today's Doctors</h1>
+                <h1 class="slider-title">Doctors Today</h1>
               </div>
 
               <div class="clockinfo">
@@ -16,12 +22,6 @@
               </div>
             </header>
             <!--- HOME-SLIDER HEADER END --->
-            
-            <!-- HOME-SLIDER BODY START -->
-            <div class="home-slider-body">
-              <SwiperSlider />
-            </div>
-            <!--- HOME-SLIDER BODY END --->
           </div>
         </div>
 
@@ -29,7 +29,7 @@
       <!--- HOME-SLIDER SECTION END --->
 
       <!-- TEST SECTION START -->
-      <section class="testsection">
+      <section class="testsection d-none">
         <div class="container">
           <div class="testsection-content">
             <header class="testsection-header">
@@ -64,10 +64,6 @@
       <section class="doctorsinfo">
         <div class="container p-0">
           <div class="doctorsinfo-content">
-            <div class="doctorsinfo-header">
-              <h1 class="doctorsinfo-title">Doctors List</h1>
-            </div>
-
             <div class="doctorsinfo-body">
               <DocInfo/>
             </div>
@@ -81,7 +77,6 @@
 
 <script>
 import SwiperSlider from '~/components/Slider/SwiperSlider';
-import Test from '~/components/Test/Test';
 import Date from '~/components/Date/Date';
 import BlogGrid from '~/components/BlogGrid/BlogGrid';
 import DocInfo from '~/components/DocInfo/DocInfo';
@@ -90,7 +85,6 @@ export default {
   name: 'IndexPage',
   components: {
     SwiperSlider,
-    Test,
     Date,
     BlogGrid,
     DocInfo,

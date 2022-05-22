@@ -12,7 +12,7 @@
 				<div class="naminfo">
 					<span class="name">{{ doctor.name }}</span>
 				</div>
-				<span :class="{ 'active': doctor.isActive }" class="status"></span>
+				<span :class="{ 'active': doctor.isActive }" class="status d-none"></span>
 			</div>
 
 			<div class="doctorpost">

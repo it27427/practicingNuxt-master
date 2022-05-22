@@ -43,19 +43,15 @@
           <!-- DESKTOP-LIST START -->
           <ul class="desktoplist">
             <li class="desktoplist-item">
-              <nuxt-link to="/" class="desktoplist-link">Home</nuxt-link>
+              <nuxt-link to="/blog" class="desktoplist-link">Blog</nuxt-link>
+            </li>
+
+            <li class="desktoplist-item">
+              <nuxt-link to="/contact" class="desktoplist-link">Contact</nuxt-link>
             </li>
 
             <li class="desktoplist-item">
               <nuxt-link to="/doctors" class="desktoplist-link">Doctors</nuxt-link>
-            </li>
-
-            <li class="desktoplist-item">
-              <nuxt-link to="/hospital" class="desktoplist-link">Hospital</nuxt-link>
-            </li>
-
-            <li class="desktoplist-item">
-              <nuxt-link to="/blog" class="desktoplist-link">Blog</nuxt-link>
             </li>
           </ul>
           <!-- DESKTOP-LIST END -->

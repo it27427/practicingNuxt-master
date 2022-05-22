@@ -4,56 +4,40 @@
 
 .home-slider {
   padding: length(48) length(20);
-  
-  @include breakpoint(mobile768) {
-    padding: length(64) length(20);
-  }
-  
-  @include breakpoint(tab992) {
-    padding: length(80) length(20);
-  }
 
   &-content {
     @include flex-column;
-    gap: length(24);
-      
-    @include breakpoint(tab992) {
-      gap: length(40);
-    }
+    gap: length(16);
   }
 
   &-header {
-    @include flex-column;
+    @include flex-center-column;
     gap: length(8);
-
-    @include breakpoint(mobile576) {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
+    text-align: center;
 
     .sliderinfo {
       .slider-title {
         color: $footerbg;
         @include font-face($secondaryFont, style('normal'), size(30), weight('semibold'), line-height(42, 30));
   
-        @include breakpoint(mobile576) {
-          @include font-face($secondaryFont, style('normal'), size(36), weight('semibold'), line-height(50.4, 36));
-        }
+        // @include breakpoint(mobile576) {
+        //   @include font-face($secondaryFont, style('normal'), size(36), weight('semibold'), line-height(50.4, 36));
+        // }
   
-        @include breakpoint(mobile768) {
-          @include font-face($secondaryFont, style('normal'), size(42), weight('semibold'), line-height(58.8, 42));
-        }
+        // @include breakpoint(mobile768) {
+        //   @include font-face($secondaryFont, style('normal'), size(42), weight('semibold'), line-height(58.8, 42));
+        // }
   
-        @include breakpoint(tab992) {
-          @include font-face($secondaryFont, style('normal'), size(48), weight('normal'), line-height(67.2, 48));
-        }
+        // @include breakpoint(tab992) {
+        //   @include font-face($secondaryFont, style('normal'), size(48), weight('normal'), line-height(67.2, 48));
+        // }
       }
     }
 
     .clockinfo {
       .date {
-        color: $gray-600;
+        color: $gray-700;
+        @include font-face($primaryFont, style('normal'), size(14), weight('bold'), line-height(19.6, 14));
       }
     }
   }
@@ -73,13 +57,13 @@
   background: $white;
   padding: length(48) length(20);
   
-  @include breakpoint(mobile768) {
-    padding: length(64) length(20);
-  }
+  // @include breakpoint(mobile768) {
+  //   padding: length(64) length(20);
+  // }
   
-  @include breakpoint(tab992) {
-    padding: length(80) length(20);
-  }
+  // @include breakpoint(tab992) {
+  //   padding: length(80) length(20);
+  // }
 
   &-content {
     @include flex-column;
@@ -95,17 +79,17 @@
       color: $footerbg;
       @include font-face($secondaryFont, style('normal'), size(30), weight('semibold'), line-height(42, 30));
 
-      @include breakpoint(mobile576) {
-        @include font-face($secondaryFont, style('normal'), size(36), weight('semibold'), line-height(50.4, 36));
-      }
+      // @include breakpoint(mobile576) {
+      //   @include font-face($secondaryFont, style('normal'), size(36), weight('semibold'), line-height(50.4, 36));
+      // }
 
-      @include breakpoint(mobile768) {
-        @include font-face($secondaryFont, style('normal'), size(42), weight('semibold'), line-height(58.8, 42));
-      }
+      // @include breakpoint(mobile768) {
+      //   @include font-face($secondaryFont, style('normal'), size(42), weight('semibold'), line-height(58.8, 42));
+      // }
 
-      @include breakpoint(tab992) {
-        @include font-face($secondaryFont, style('normal'), size(48), weight('normal'), line-height(67.2, 48));
-      }
+      // @include breakpoint(tab992) {
+      //   @include font-face($secondaryFont, style('normal'), size(48), weight('normal'), line-height(67.2, 48));
+      // }
     }
   }
 
@@ -128,13 +112,13 @@
 .blog {
   padding: length(48) length(20);
   
-  @include breakpoint(mobile768) {
-    padding: length(64) length(20);
-  }
+  // @include breakpoint(mobile768) {
+  //   padding: length(64) length(20);
+  // }
   
-  @include breakpoint(tab992) {
-    padding: length(80) length(20);
-  }
+  // @include breakpoint(tab992) {
+  //   padding: length(80) length(20);
+  // }
 
   &-content {
     @include flex-column;
@@ -150,17 +134,17 @@
       color: $footerbg;
       @include font-face($secondaryFont, style('normal'), size(30), weight('semibold'), line-height(42, 30));
 
-      @include breakpoint(mobile576) {
-        @include font-face($secondaryFont, style('normal'), size(36), weight('semibold'), line-height(50.4, 36));
-      }
+      // @include breakpoint(mobile576) {
+      //   @include font-face($secondaryFont, style('normal'), size(36), weight('semibold'), line-height(50.4, 36));
+      // }
 
-      @include breakpoint(mobile768) {
-        @include font-face($secondaryFont, style('normal'), size(42), weight('semibold'), line-height(58.8, 42));
-      }
+      // @include breakpoint(mobile768) {
+      //   @include font-face($secondaryFont, style('normal'), size(42), weight('semibold'), line-height(58.8, 42));
+      // }
 
-      @include breakpoint(tab992) {
-        @include font-face($secondaryFont, style('normal'), size(48), weight('normal'), line-height(67.2, 48));
-      }
+      // @include breakpoint(tab992) {
+      //   @include font-face($secondaryFont, style('normal'), size(48), weight('normal'), line-height(67.2, 48));
+      // }
     }
   }
 }
@@ -179,13 +163,13 @@
   background: $white;
   padding: length(48) length(20);
   
-  @include breakpoint(mobile768) {
-    padding: length(64) length(20);
-  }
+  // @include breakpoint(mobile768) {
+  //   padding: length(64) length(20);
+  // }
   
-  @include breakpoint(tab992) {
-    padding: length(80) length(20) length(160);
-  }
+  // @include breakpoint(tab992) {
+  //   padding: length(80) length(20) length(160);
+  // }
 
   &-content {
     @include flex-column;
@@ -201,18 +185,77 @@
       color: $footerbg;
       @include font-face($secondaryFont, style('normal'), size(30), weight('semibold'), line-height(42, 30));
 
-      @include breakpoint(mobile576) {
-        @include font-face($secondaryFont, style('normal'), size(36), weight('semibold'), line-height(50.4, 36));
-      }
+      // @include breakpoint(mobile576) {
+      //   @include font-face($secondaryFont, style('normal'), size(36), weight('semibold'), line-height(50.4, 36));
+      // }
 
-      @include breakpoint(mobile768) {
-        @include font-face($secondaryFont, style('normal'), size(42), weight('semibold'), line-height(58.8, 42));
-      }
+      // @include breakpoint(mobile768) {
+      //   @include font-face($secondaryFont, style('normal'), size(42), weight('semibold'), line-height(58.8, 42));
+      // }
 
-      @include breakpoint(tab992) {
-        @include font-face($secondaryFont, style('normal'), size(48), weight('normal'), line-height(67.2, 48));
-      }
+      // @include breakpoint(tab992) {
+      //   @include font-face($secondaryFont, style('normal'), size(48), weight('normal'), line-height(67.2, 48));
+      // }
     }
+  }
+
+  &-body {
+    @include w100;
+
+    .doctorgallery {
+      @include w100;
+      @include flex-column;
+      gap: length(24);
+  
+      @include breakpoint(tab992) {
+        flex-direction: row;
+      }
+
+      .gallery-info {
+        @include w100;
+        overflow: hidden;
+  
+        @include breakpoint(tab992) {
+          width: 70%;
+        }
+      }
+
+      .gallery-thumbs {
+        overflow: hidden;
+        @include w100;
+        @include flex-center-vert;
+        flex-wrap: wrap;
+        gap: length(12);
+  
+        @include breakpoint(tab992) {
+          width: 30%;
+          flex-direction: column;
+          flex-wrap: nowrap;
+          max-height: length(623);
+          overflow-x: hidden;
+          overflow-y: scroll;
+          padding-right: length(8);
+
+          &::-webkit-scrollbar {
+            background: transparent;
+            width: length(8);
+          }
+  
+          &::-webkit-scrollbar-thumb {
+            background: $gray-300;
+            @include radius(8);
+          }    
+        }
+
+        .item {
+          width: calc(50% - 0.5rem);
+
+          @include breakpoint(tab992) {
+            @include w100;
+          }
+        }
+      }
+    }    
   }
 }
 

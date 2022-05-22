@@ -1,38 +1,12 @@
 <template>
-	<client-only>
-    <section class="ourdoctors">
-      <div class="container p-0">
-        <div class="ourdoctors-content">
-          <div class="ourdoctors-header">
-            
-          </div>
-          <div class="ourdoctors-body">
-            <div class="row">
-              <div class="col-lg-3 d-none d-lg-block">
-                <FilterSidebar/>
-              </div>
-              
-              <div class="col-lg-9 col-12">
-                <AllDoc/>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-	</client-only>
+  <div>
+    
+  </div>
 </template>
 
 <script>
-  import FilterSidebar from '~/components/Filter/FilterSidebar/FilterSidebar';
-  import AllDoc from '~/components/AllDoc/AllDoc';
-
   export default {
-    name: 'DoctorsPage',
-    components: {
-      FilterSidebar,
-      AllDoc,
-    },
+    name: 'DoctorCategories',
     data() {
       return {
         categories: [
@@ -57,6 +31,6 @@
           {title: 'হেড-নেক সার্জন'},
         ]
       }
-    },
+    }
   }
 </script>

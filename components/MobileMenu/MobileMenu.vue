@@ -15,20 +15,17 @@
 		<div class="offcanvas-body">
 				<!-- MOBILE-LIST START -->
 				<ul class="mobilelist">
+
 					<li class="mobilelist-item">
-						<nuxt-link to="/" class="mobilelist-link">Home</nuxt-link>
+						<nuxt-link to="/blog" class="mobilelist-link">Blog</nuxt-link>
+					</li>
+
+					<li class="mobilelist-item">
+						<nuxt-link to="/contact" class="mobilelist-link">Contact</nuxt-link>
 					</li>
 
 					<li class="mobilelist-item">
 						<nuxt-link to="/doctors" class="mobilelist-link">Doctors</nuxt-link>
-					</li>
-
-					<li class="mobilelist-item">
-						<nuxt-link to="/hospital" class="mobilelist-link">Hospital</nuxt-link>
-					</li>
-
-					<li class="mobilelist-item">
-						<nuxt-link to="/blog" class="mobilelist-link">Blog</nuxt-link>
 					</li>
 				</ul>
 				<!-- MOBILE-LIST END -->
