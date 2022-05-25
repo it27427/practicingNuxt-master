@@ -1,0 +1,101 @@
+/**=======================================================**
+                    CONTACT-SECTION START
+**=======================================================**/
+.contact {
+	padding: length(48) length(8);
+
+	@include breakpoint(tab992) {
+		padding: length(80) length(0);
+	}
+
+	&-content {
+		background: $white;
+		padding: length(24);
+		@include flex-column;
+		gap: length(40);
+
+		@include breakpoint(mobile576) {
+			padding: length(40);
+		}
+
+		@include breakpoint(mobile768) {
+			padding: length(40) length(55);
+			gap: length(64);
+		}
+
+		@include breakpoint(tab992) {
+			padding: length(80) length(110);
+			gap: length(80);
+		}
+
+		.contact-header {
+			@include flex-center;
+			text-align: center;
+
+			.contact-title {
+				color: $gray-700;
+				@include font-face($primaryFont, style('normal'), size(32), weight('semibold'), line-height(47, 32));
+
+				@include breakpoint(mobile768) {
+					@include font-face($primaryFont, style('normal'), size(40), weight('semibold'), line-height(77, 40));
+				}
+
+				@include breakpoint(tab992) {
+					@include font-face($primaryFont, style('normal'), size(52), weight('semibold'), line-height(79.09, 52));
+				}
+			}
+		}
+
+		.contact-body {
+			.contactform {
+				@include flex-column;
+				gap: length(16);
+
+        .inputbox {
+          @include flex-column;
+          gap: length(8);
+
+          .inputlabel {
+            @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(16.94, 14));
+            color: $textLabel;
+          }
+
+          .inputfield {
+            @include border(solid, 1, $gray-300);
+            @include radius(6);
+            @include setBgColor($white, $black);
+            @include font-face($primaryFont, style('normal'), size(15), weight('medium'), line-height(15, 15));
+            padding: length(11.5) length(16);
+            @include transitionsall;
+
+            &::placeholder {
+              color: $textPlaceholder;
+            }
+
+            &:focus {
+              border-color: $gray-500;
+            }
+          }
+
+          textarea {
+            resize: none;
+
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+			}
+		}
+	}
+
+	&-body {
+		.formsubmit {
+			@include flex-end;
+		}
+	}
+}
+
+/**=======================================================**
+                    CONTACT-SECTION END
+**=======================================================**/

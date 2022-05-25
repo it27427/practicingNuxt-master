@@ -21,3 +21,89 @@
     opacity: 1;
   }
 }
+
+.btn-submit {
+	@include w100;
+	padding: length(12);
+	position: relative;
+	background: $white;
+	@include border(solid, 2, $primary);
+	@include radius(5);
+	@include flex-center;
+	text-align: center;
+	@include transitionsall;
+  width: length(200);
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		@include wh100;
+		background: $primary;
+		@include transitionsall;
+	}
+
+	.btn-text {
+		color: $white;
+		position: relative;
+		@include font-face($primaryFont, style('normal'), size(14), weight('semibold'), line-height(19.6, 14));
+    text-transform: uppercase;
+
+		@include breakpoint(tab992) {
+			@include font-face($primaryFont, style('normal'), size(16), weight('semibold'), line-height(22.4, 16));
+		}
+	}
+
+	@include hover {
+		.btn-text {
+			color: $primary;
+		}
+
+		&::before {
+			width: 0;
+		}
+	}
+}
+
+.btn-read {
+	@include setBgColor($primary, $white);
+	@include font-face($primaryFont, style('normal'), size(12), weight('semibold'), line-height(12, 12));
+	padding: length(16);
+	text-align: center;
+	@include flex-center;
+	@include w100;
+	@include radius(8);
+	text-align: center;
+	@include transitionsall;
+
+	@include breakpoint(mobile576) {
+		@include font-face($primaryFont, style('normal'), size(14), weight('semibold'), line-height(14, 14));
+	}
+
+	@include hover {
+			@include setBgColor(darken($primary, 15%), $white);
+	}
+}
+
+.btn-seeall {
+	@include border(solid, 1, $primary);
+	@include setBgColor($white, $primary);
+	@include font-face($primaryFont, style('normal'), size(12), weight('semibold'), line-height(12, 12));
+	padding: length(16);
+	text-align: center;
+	@include flex-center;
+	@include w100;
+	@include radius(8);
+	text-align: center;
+	@include transitionsall;
+
+	@include breakpoint(mobile576) {
+		@include font-face($primaryFont, style('normal'), size(14), weight('semibold'), line-height(14, 14));
+	}
+
+	@include hover {
+		@include setBgColor($primary, $white);
+	}
+}

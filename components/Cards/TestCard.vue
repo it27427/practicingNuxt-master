@@ -2,8 +2,7 @@
   <div v-if="test !== {}" class="card-test">
     <div class="card-test-header">
       <div class="card-thumbnail">
-        <!-- <img :src="doctor.imgSrc ? doctor.imgSrc : '~/static/assets/images/tests/test-1.jpg'" alt="doctor-thumbnail"> -->
-        <img src="~/static/assets/images/tests/test-1.jpg" alt="test-thumbnail">
+				<img src="~/static/assets/images/tests/test-1.jpg" alt="test-thumbnail">
       </div>
     </div>
     

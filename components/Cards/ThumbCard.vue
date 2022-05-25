@@ -2,7 +2,7 @@
   <div class="card-thumb">
     <div class="card-thumb-header">
       <div class="card-thumbnail">
-        <img src="~/static/assets/images/doctors/doctor-thumbnail.png" alt="doctor-thumbnail">
+        <img src="~/static/assets/images/doctors/doctor-1.png" alt="doctor-thumbnail">
       </div>
     </div>
     

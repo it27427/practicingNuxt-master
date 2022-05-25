@@ -528,6 +528,188 @@
   }
 }
 
+.card-blog {
+	background: $white;
+	@include radius(16);
+	overflow: hidden;
+
+	&-thumbnail {
+		overflow: hidden;
+		@include wh100;
+
+		@include breakpoint(tablet991) {
+			@include radius(16);
+		}
+
+		img {
+			@include wh100;
+			object-fit: cover;
+		}
+	}
+
+	&-details {
+		padding: length(44) length(44) length(44) length(0);
+		@include flex-column;
+		gap: length(44);
+
+		@include breakpoint(desktop1400) {
+			padding: length(40) length(42) length(40) length(0);
+		}
+
+		@include breakpoint(desktop1200) {
+			gap: length(32);
+			padding: length(30) length(30) length(30) length(0);
+		}
+
+		@include breakpoint(tablet991) {
+			padding: length(32);
+		}
+
+		@include breakpoint(phone768) {
+			padding: length(24);
+		}
+
+		@include breakpoint(phone575) {
+			padding: length(16) length(16) length(32);
+		}
+
+		.info {
+			@include flex-column;
+			gap: length(16);
+
+			@include breakpoint(desktop1200) {
+				gap: length(28);
+			}
+
+			&-head {
+				@include flex-column;
+				gap: length(8);
+
+				.blogtitle {
+					color: $gray-800;
+					@include font-face($primaryFont, style('normal'), size(20), weight('semibold'), line-height(27.3, 20));
+
+					@include breakpoint(mobile768) {
+						@include font-face($primaryFont, style('normal'), size(24), weight('semibold'), line-height(32.64, 24));
+					}
+
+					@include breakpoint(tab992) {
+						@include font-face($primaryFont, style('normal'), size(28), weight('semibold'), line-height(38.08, 28));
+					}
+
+					@include breakpoint(desktop1400) {
+						@include font-face($primaryFont, style('normal'), size(36), weight('semibold'), line-height(48.96, 36));
+					}
+				}
+
+				.date {
+					@include font-face($primaryFont, style('normal'), size(20), weight('normal'), line-height(27.3, 20));
+					// color: $dateColor;
+					
+					@include breakpoint(mobile768) {
+						@include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(26, 16));
+					}
+				}
+			}
+
+			&-body {
+				.blogtext {
+					@include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(24, 14));
+					color: $gray-600;
+					
+					@include breakpoint(mobile768) {
+						@include font-face($primaryFont, style('normal'), size(18), weight('normal'), line-height(30, 18));
+					}
+				}
+			}
+		}
+
+		.readinfo {
+			width: length(200);
+		}
+	}
+}
+
+.card-article {
+	background: $white;
+	@include radius(8);
+	@include flex-column;
+	gap: length(8);
+	padding: length(6);
+	max-width: 100%;
+
+	@include breakpoint(mobile480) {
+		max-width: length(312);
+		margin-inline: auto;
+	}
+
+	@include breakpoint(mobile576) {
+		max-width: 100%;
+	}
+
+	&-header {
+		@include radius(8);
+		@include w100;
+		height: length(170);
+		overflow: hidden;
+
+		img {
+			@include wh100;
+			object-fit: cover;
+			@include transitiontransform;
+
+			@include hover {
+				@include transform(scale(1.05));
+			}
+		}
+	}
+
+	&-body {
+		@include flex-column;
+		gap: length(12);
+		padding: length(6);
+
+		.title-date {
+			@include flex-column;
+
+			.title {
+				color: $gray-800;
+				@include font-face($primaryFont, style('normal'), size(16), weight('semibold'), line-height(25, 16));
+				@include transitionscolor;
+
+				@include hover {
+					color: $primary;
+				}
+			}
+
+			.date {
+				color: $gray-600;
+				@include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(24, 14));
+				font-feature-settings: 'salt';
+			}
+		}
+
+		.articledescript {
+			.articletext {
+				color: $gray-600;
+				@include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(24, 14));
+				font-feature-settings: 'salt';
+			}
+		}
+
+		.articlelink {
+			color: $gray-800;
+			@include font-face($primaryFont, style('normal'), size(14), weight('semibold'), line-height(24, 14));
+			font-feature-settings: 'salt';
+			@include transitionscolor;
+
+			@include hover {
+				color: $primary;
+			}
+		}
+	}
+}
+
 /**=======================================================**
                         CARD-SLIDE END
 **=======================================================**/

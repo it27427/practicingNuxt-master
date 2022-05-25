@@ -1,0 +1,274 @@
+/**=======================================================**
+                  BLOG-DETAILS SECTION START
+**=======================================================**/
+.blogdetails {
+  padding: length(40) length(8) length(80);
+
+  @include breakpoint(tablet991) {
+    padding: length(40) length(8) length(40);
+  }
+
+  &-content {
+    @include flex-center-column;
+    gap: length(48);
+
+    @include breakpoint(tablet991) {
+      gap: length(96);
+    }
+  }
+
+  &-thumbnail {
+    @include w100;
+    @include radius(16);
+    @include flex-center;
+    overflow: hidden;
+    height: length(340);
+
+    @include breakpoint(mobile576) {
+      height: length(400);
+    }
+
+    @include breakpoint(mobile768) {
+      height: length(480);
+    }
+
+    @include breakpoint(tab992) {
+      height: length(580);
+      width: 85%;
+    }
+
+    img {
+      @include wh100;
+      object-fit: cover;
+      @include transitiontransform;
+
+      @include hover {
+        @include transform(scale(1.05));
+      }
+    }
+  }
+
+  .bloginfo {
+    @include w100;
+
+    .blogdescriptions {
+      @include flex-column;
+      gap: length(48);
+
+      &-header {
+        @include flex-column;
+        gap: length(24);
+
+        .titlebox {
+          .title {
+            color: $gray-800;
+            @include font-face($primaryFont, style('normal'), size(16), weight('semibold'), line-height(21.76, 16));
+
+            @include breakpoint(mobile480) {
+              @include font-face($primaryFont, style('normal'), size(18), weight('semibold'), line-height(24.48, 18));
+            }
+
+            @include breakpoint(mobile768) {
+              @include font-face($primaryFont, style('normal'), size(20), weight('semibold'), line-height(27.3, 20));
+            }
+
+            @include breakpoint(tab992) {
+              @include font-face($primaryFont, style('normal'), size(24), weight('semibold'), line-height(32.64, 24));
+            }
+
+            @include breakpoint(desktop1100) {
+              @include font-face($primaryFont, style('normal'), size(28), weight('semibold'), line-height(38.08, 28));
+            }
+
+            @include breakpoint(desktop1200) {
+              @include font-face($primaryFont, style('normal'), size(36), weight('semibold'), line-height(48.96, 36));
+            }
+          }
+        }
+
+        .authorinfo-shareinfo {
+          @include flex-column;
+          gap: length(12);
+
+          @include breakpoint(mobile768) {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: length(24);
+          }
+
+          .authorinfo {
+            @include flex-column;
+            gap: length(8);
+
+            .authorname {
+              @include font-face($primaryFont, style('normal'), size(14), weight('semibold'), line-height(24, 14));
+              color: $gray-600;
+
+              @include breakpoint(mobile768) {
+                @include font-face($primaryFont, style('normal'), size(16), weight('semibold'), line-height(26, 16));
+              }
+            }
+
+            .date {
+              @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(24, 14));
+              color: $gray-600;
+            }
+          }
+
+          .shareinfo {
+            @include flex-column;
+            gap: length(12);
+
+            .sharetitle {
+              @include font-face($primaryFont, style('normal'), size(12), weight('semibold'), line-height(20, 12));
+              color: $gray-600;
+            }
+
+            .sociallist {
+              @include list-horizontal;
+              gap: length(8);
+
+              &-link {
+                @include flex-center-column;
+                gap: length(4);
+
+                .icon {
+                  @include square(length(44));
+                  padding: length(14);
+                  @include circle;
+                  @include flex-center;
+                  overflow: hidden;
+                  // background: $socialIconBg;
+                  @include transitionsall;
+
+                  svg {
+                    @include wh100;
+                    
+                    path {
+                      @include transitionsall;
+                    }
+                  }
+                }
+
+                .text {
+                  @include font-face($primaryFont, style('normal'), size(12), weight('normal'), line-height(20, 12));
+                  color: $gray-600;
+                  text-align: center;
+                  @include transitionsall;
+                }
+
+                @include hover {
+                  .icon {
+                    background: lighten($primary, 40%);
+
+                    svg {
+                      path {
+                        fill: $primary;
+                      }
+                    }
+                  }
+
+                  .text {
+                    color: $primary;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .divider {
+        @include w100;
+        height: length(1);
+        background: $gray-500;
+      }
+
+      &-body {
+        @include flex-column;
+        gap: length(32);
+
+        .detail {
+          @include flex-column;
+          gap: length(14);
+
+          &-title {
+            color: $gray-800;
+            @include font-face($primaryFont, style('normal'), size(20), weight('semibold'), line-height(27.3, 20));
+
+            @include breakpoint(mobile768) {
+              @include font-face($primaryFont, style('normal'), size(24), weight('semibold'), line-height(32.64, 24));
+            }
+          }
+
+          .description {
+            @include flex-column;
+            gap: length(4);
+
+            .descriptiontext {
+              @include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(26, 16));
+              color: $gray-600;
+
+              @include breakpoint(mobile768) {
+                @include font-face($primaryFont, style('normal'), size(18), weight('normal'), line-height(30, 18));
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/**=======================================================**
+                  BLOG-DETAILS SECTION END
+**=======================================================**/
+
+
+
+/**=======================================================**
+                  READ NEXT SECTION START
+**=======================================================**/
+
+.readnext {
+  padding: length(0) length(0) length(40);
+
+  @include breakpoint(tab992) {
+    padding: length(80) length(0);
+  }
+
+  &-content {
+    @include flex-center-column;
+    gap: length(40);
+  }
+
+  &-header {
+    @include w100;
+
+    .readnext-title {
+      color: $gray-800;
+      @include font-face($primaryFont, style('normal'), size(24), weight('semibold'), line-height(32.64, 24));
+      text-align: center;
+
+      @include breakpoint(tab992) {
+        @include font-face($primaryFont, style('normal'), size(28), weight('semibold'), line-height(38.08, 28));
+      }
+    }
+  }
+
+  &-body {
+    @include w100;
+  }
+
+  &-footer {
+    @include flex-center;
+    @include w100;
+
+    .backinfo {
+      width: length(200);
+    }
+  }
+}
+/**=======================================================**
+                  READ NEXT SECTION END
+**=======================================================**/

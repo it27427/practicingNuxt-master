@@ -2,7 +2,7 @@
   <div class="card-gallery">
     <div class="card-gallery-header">
       <div class="card-thumbnail">
-        <img src="~/static/assets/images/doctors/doctor-thumbnail.png" alt="doctor-thumbnail">
+        <img src="~/static/assets/images/doctors/doctor-3.png" alt="doctor-thumbnail">
       </div>
     </div>
     

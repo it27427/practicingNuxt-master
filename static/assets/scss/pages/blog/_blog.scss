@@ -1,0 +1,111 @@
+/**=======================================================**
+                    BLOG BANNER START
+**=======================================================**/
+
+.blogbanner {
+  background: url(~static/assets/images/blogs/blog-hero-bg.jpg) no-repeat center center/cover;
+  min-height: 50vh;
+  position: relative;
+  @include flex-center;
+
+  .overlay {
+    background: rgba($black, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include wh100;
+    z-index: 1;
+  }
+
+  &-content {
+    padding: length(48);
+    @include flex-center;
+
+    .banner-title {
+      position: relative;
+      z-index: 2;
+      color: $gray-100;
+      @include font-face($primaryFont, style('normal'), size(24), weight('semibold'), line-height(32.64, 24));
+
+      @include breakpoint(mobile768) {
+        @include font-face($primaryFont, style('normal'), size(28), weight('semibold'), line-height(38.08, 28));
+      }
+
+      @include breakpoint(tab992) {
+        @include font-face($primaryFont, style('normal'), size(36), weight('semibold'), line-height(48.96, 36));
+      }
+
+      @include breakpoint(desktop1100) {
+        @include font-face($primaryFont, style('normal'), size(48), weight('normal'), line-height(67.2, 48));
+      }
+    }
+  }
+}
+
+/**=======================================================**
+                    BLOG BANNER END
+**=======================================================**/
+
+
+
+/**=======================================================**
+                    BLOG SECTION START
+**=======================================================**/
+.blog {
+  padding: length(80) length(0);
+
+  @include breakpoint(tablet991) {
+    padding: length(40) length(0);
+  }
+}
+/**=======================================================**
+                    BLOG SECTION END
+**=======================================================**/
+
+
+
+/**=======================================================**
+              BLOG-SCRIPT SECTION START
+**=======================================================**/
+.blogdescript {
+  background: $gray-200;
+  padding: length(80) length(0);
+
+  @include breakpoint(tablet991) {
+    padding: length(40) length(0);
+  }
+}
+/**=======================================================**
+              BLOG-SCRIPT SECTION END
+**=======================================================**/
+
+
+
+/**=======================================================**
+                ALL-BLOGS SECTION START
+**=======================================================**/
+.allblogs {
+  padding: length(80) length(0);
+
+  @include breakpoint(tablet991) {
+    padding: length(40) length(0);
+  }
+
+  &-content {
+    @include flex-center-column;
+    gap: length(48);
+
+    .seeall {
+      @include w100;
+      @include flex-center;
+
+      .seemore {
+        width: length(200);
+      }
+    }
+  }
+}
+
+/**=======================================================**
+                ALL-BLOGS SECTION END
+**=======================================================**/
