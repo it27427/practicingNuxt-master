@@ -1,0 +1,210 @@
+.doctordetails {
+  padding: length(40) length(8) length(80);
+
+  @include breakpoint(tablet991) {
+    padding: length(40) length(8) length(40);
+  }
+
+  &-content {
+    @include flex-column;
+    gap: length(48);
+
+    @include breakpoint(tablet991) {
+      gap: length(96);
+    }
+
+    .profileinfo {
+      @include flex-column;
+      gap: length(24);
+
+      .doctor-profile {
+        position: relative;
+        @include w100;
+        height: length(430);
+
+        img {
+          @include wh100;
+          object-fit: cover;
+        }
+
+        .docinfo {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          @include w100;
+          background: rgba($primary, 0.85);
+          padding: length(16);
+          display: none;
+          @extend %animation;
+          @extend %slideUpIn;
+          @include transitionsall;
+
+          .name {
+            color: $white;
+          }
+
+          .designation {
+            color: $gray-200;
+          }
+        }
+
+        @include hover {
+          .docinfo {
+            @include flex-column;
+            gap: length(4);
+          }
+        }
+      }
+
+      .biography {
+        padding: length(14);
+        @include flex-center-column;
+        gap: length(8);
+        text-align: center;
+      }
+    }
+
+    .profile-information {
+      padding: length(32);
+      @include flex-column;
+
+      .name {
+        color: $footerbg;
+      }
+
+      .studylist {
+        @include list-vertical;
+
+        &-item {
+          font-weight: 500;
+        }
+      }
+
+      .workingplace {
+        margin-bottom: length(20);
+        color: $footerbg;
+        font-weight: 500
+      }
+
+      .specilities {
+        @include flex-column;
+        gap: length(8);
+        margin-bottom: length(20);
+
+        &-body {
+          @include flex-center-vert;
+          gap: length(8);
+          flex-wrap: wrap;
+
+          .spacility {
+            @include setBgColor($gray-300, $footerbg);
+            @include radius(8);
+            display: inline-block;
+            font-weight: 500;
+            padding: length(8) length(16);
+          }
+        }
+      }
+
+      .experience {
+        margin-bottom: length(20);
+        @include flex-column;
+        gap: length(4);
+      }
+
+      .contacts {
+        @include flex-column;
+        gap: length(8);
+        margin-bottom: length(20);
+
+        &-body {
+          .followlist {
+            @include list-horizontal;
+            gap: length(12);
+
+            &-link {
+              @include flex-center;
+              @include square(length(40));
+              background: $white;
+              @include circle;
+
+              &:nth-child(1) {
+                color: $facebookbg;
+
+                @include hover {
+                  @include setBgColor($facebookbg, $white);
+                }
+              }
+
+              &:nth-child(2) {
+                color: $twitterbg;
+
+                @include hover {
+                  @include setBgColor($twitterbg, $white);
+                }
+              }
+
+              &:nth-child(3) {
+                color: $instagrambg;
+
+                @include hover {
+                  @include setBgColor($instagrambg, $white);
+                }
+              }
+
+              &:nth-child(4) {
+                color: $linkedinbg;
+
+                @include hover {
+                  @include setBgColor($linkedinbg, $white);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .chember {
+        @include flex-column;
+        gap: length(8);
+  
+        &-body {
+          .schedulelist {
+            @include list-vertical;
+            gap: length(12);
+  
+            &-item {
+              @include flex-column;
+              background: $gray-200;
+              padding: length(16);
+              @include radius(8);
+              
+              span {
+                @include flex-center-vert;
+                gap: length(4);
+
+                .icon {
+                  @include flex-center;
+                  @include square(length(32));
+                }
+
+                .text {
+                  font-weight: 600;
+                }
+
+                .link {
+                  font-weight: 600;
+                  @include transitionscolor;
+
+                  @include hover {
+                    color: $primary;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@
     <div class="moredoc">
       <div class="moredoc-header py-4">
         <div class="container">
-          <h4 class="title">Other Doctors</h4>
+          <h4 class="title">Suggested Doctors</h4>
         </div>
       </div>
       <div class="moredoc-body">

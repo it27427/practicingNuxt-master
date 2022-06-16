@@ -145,16 +145,16 @@ body {
 }
 
 a {
-    text-decoration: none !important;
+    text-decoration: none;
     display: inline-block;
 
     &:hover {
-        text-decoration: none !important;
+        text-decoration: none;
     }
 }
 
 figure, p {
-    margin-bottom: 0 !important;
+    margin-bottom: 0;
 }
 
 // HIDE INPUT ARROWS

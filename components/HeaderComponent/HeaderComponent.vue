@@ -34,7 +34,7 @@
 
             <!-- DESKTOP-SEARCH SUGGESTIONS START -->
             <div class="desktopsearch-result">
-
+              
             </div>
             <!-- DESKTOP-SEARCH SUGGESTIONS END ---->
           </div>

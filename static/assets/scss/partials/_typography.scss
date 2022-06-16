@@ -51,7 +51,8 @@ $font-weights: ('thin':100, 'extralight': 200, 'light': 300, 'normal': normal, '
 	line-height: $line-height;
 }
 
-a, span, p, input {
+li, a, span, p, span, input {
+	color: $secondary;
 	@include font-face($primaryFont, style('normal'), size(12), weight('normal'), line-height(16.8, 12));
 	
 	@include breakpoint(mobile500) {
@@ -64,10 +65,12 @@ a, span, p, input {
 }
 
 h1 {
+	color: $footerbg;
 	@include font-face($secondaryFont, style('normal'), size(48), weight('normal'), line-height(67.2, 48));
 }
 
 h2 {
+	color: $footerbg;
 	@include font-face($secondaryFont, style('normal'), size(42), weight('semibold'), line-height(58.8, 42));
 }
 
@@ -76,13 +79,16 @@ h3 {
 }
 
 h4 {
+	color: $footerbg;
 	@include font-face($secondaryFont, style('normal'), size(30), weight('semibold'), line-height(42, 30));
 }
 
 h5 {
+	color: $footerbg;
 	@include font-face($secondaryFont, style('normal'), size(24), weight('semibold'), line-height(33.6, 24));
 }
 
 h6 {
+	color: $headerBg;
 	@include font-face($secondaryFont, style('normal'), size(18), weight('semibold'), line-height(25.2, 18));
 }

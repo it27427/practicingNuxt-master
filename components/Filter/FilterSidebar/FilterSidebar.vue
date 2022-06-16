@@ -26,6 +26,15 @@
         </option>
       </select>
     </div>
+
+    <div class="filteroption">
+      <label for="days">Days</label>
+      <select id="days" class="category-select">
+        <option v-for="(day, i) in days" :key="i">
+          <DayOption :day-info=day />
+        </option>
+      </select>
+    </div>
   </aside>
 </template>
 
@@ -33,12 +42,15 @@
   import CategoryOption from '~/components/Filter/Options/CategoryOption';
   import DistrictOption from '~/components/Filter/Options/DistrictOption';
   import ThanaOption from '~/components/Filter/Options/ThanaOption';
+  import DayOption from '~/components/Filter/Options/DayOption';
+
   export default {
     name: 'FilterSidebar',
     components: {
       CategoryOption,
       DistrictOption,
       ThanaOption,
+      DayOption,
     },
     data() {
       return {
@@ -81,6 +93,15 @@
           {name: 'Jhenaigati'},
           {name: 'Uttara'},
           {name: 'Khilkhet'},
+        ],
+        days: [
+          {name: 'Saturday'},
+          {name: 'Sunday'},
+          {name: 'Monday'},
+          {name: 'Tuesday'},
+          {name: 'Wednesday'},
+          {name: 'Thursday'},
+          {name: 'Friday'},
         ]
       }
     }
